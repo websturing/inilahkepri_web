@@ -11,4 +11,8 @@
 |
 */
 
+
+
+Route::post("/master/berita", "beritaControl@index");
+
 Route::get("/{any}", "appControl@index")->where("any", ".*");

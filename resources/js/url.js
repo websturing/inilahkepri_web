@@ -1,6 +1,7 @@
 const urlAxios = "http://localhost/inilahkepri_web/api";
 const urlBase = "inilahkepri_web";
 const urlWeb = "http://localhost/inilahkepri_web";
+const urlThumbnailBerita = "http://localhost/inilahkepri_mobile/storage/Artikel_Thumbnail";
 
 // const urlAxios = "http://192.168.100.8/inilahkepri_mobile/api";
 // const urlBase = "inilahkepri_mobile";
@@ -15,4 +16,5 @@ export default {
   urlAxios: urlAxios,
   urlBase: urlBase,
   urlWeb: urlWeb,
+  urlThumbnailBerita : urlThumbnailBerita,
 }

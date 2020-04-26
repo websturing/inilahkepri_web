@@ -40,57 +40,6 @@
             </div>
         </div>
         <br/><br/><br/><br/>
-        <section class="headline-content ik-sideStrip">
-            <div class="ik-container">
-                <div class="headlineLeft">
-                    <div class="padd-10">
-                        <span class="ik-date-p">22 April 2020</span>
-                        <h1>Paket Sembako Murah Untuk 
-                            Masyarakat Tanjungpinang 
-                            Terdampak Wabah Corona Diluncurkan
-                        </h1>
-                        <p>
-                            INILAHKEPRI, TANJUNGPINANG - Pemerintah Kota Tanjungpinang meluncurkan paket sembako
-                            murah untuk masyarakat yang terdampak  wabah pandemi virus Corona (Covid-19). 
-                            Paket sembako murah dibandrol dengan harga  Rp40 ribu, masyarakat Tanjungpinang dapat
-                            membawa pulang beras, gula pasir, tepung terigu, minyak goreng, mie instan dan telur.    
-                        <p>
-                        <span class="ik-date-p text-right">Baca Selengkapnya <i class="fa fa-arrow-right"></i></span>
-                    </div>
-                </div>
-                <div class="headlineRight">
-                    <div class="padd-10 ik-sideStrip-headline">
-                        <img src="{{url('public/images/head.jpg')}}" class="ik-headline-img">
-                    </div>
-                </div>
-                <div class="clearer"></div>
-
-
-                <div class="newTranding">
-                    <div class="panel">
-                        <img src="{{url('public/images/head.jpg')}}" class="ik-headline-img">
-                        <p>Paket Sembako Murah Untuk Masyarakat Tanjungpinang Terdampak Wabah Corona Diluncurkan</p>
-                        <span class="time">20 April 2020, 13 jam lalu</span>
-                    </div>
-                    <div class="panel">
-                        <img src="{{url('public/images/head.jpg')}}" class="ik-headline-img">
-                        <p>Paket Sembako Murah Untuk Masyarakat Tanjungpinang Terdampak Wabah Corona Diluncurkan</p>
-                        <span class="time">20 April 2020, 13 jam lalu</span>
-                    </div>
-                    <div class="panel">
-                        <img src="{{url('public/images/head.jpg')}}" class="ik-headline-img">
-                        <p>Paket Sembako Murah Untuk Masyarakat Tanjungpinang Terdampak Wabah Corona Diluncurkan</p>
-                        <span class="time">20 April 2020, 13 jam lalu</span>
-                    </div>
-                    <div class="panel">
-                        <img src="{{url('public/images/head.jpg')}}" class="ik-headline-img">
-                        <p>Paket Sembako Murah Untuk Masyarakat Tanjungpinang Terdampak Wabah Corona Diluncurkan</p>
-                        <span class="time">20 April 2020, 13 jam lalu</span>
-                    </div>
-                </div>
-                <div class="clearer"></div>
-            </div>
-        </section>
         <div id="app">
             <router-view :key="$route.fullPath"></router-view>
         </div>
