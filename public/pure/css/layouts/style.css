@@ -1,0 +1,197 @@
+html, body{
+    color: #000;
+}
+
+.text-right{
+    text-align: right !important;
+    display:block;
+}
+
+.ik-container{
+    width : 1024px !important;
+    height: auto;
+    margin-left:auto;
+    margin-right:auto;
+}
+
+.ik-container h1{
+    margin-top: 0px;
+    line-height: 35px;
+}
+
+.ik-container p{
+    font-size: 12px;
+    font-family: "Open Sans";
+    font-weight: 500;
+    line-height: 20px;
+}
+
+
+.padd-10{
+    padding: 10;
+    margin: 10px;
+}
+
+.clearer{
+    clear: both;
+}
+
+.headline-content{
+    background: white !important;
+    z-index: 1;
+    position: relative; /* needed for footer positioning*/
+    min-height: 100% !important; /* real browsers */
+}
+
+.ik-sideStrip{
+    position: relative;
+}
+@media (min-width: 1368px) {
+.ik-sideStrip::before {
+    content: "";
+    display: block;
+    background-image: url('../strip.png');
+    background-size: 340px 180px;
+    width: 340px;
+    height: 180px;
+    opacity: .5;
+    position: absolute;
+    bottom: 32px;
+    left: -15px;
+}
+}
+@media (min-width: 600px) and (max-width:1367px) {
+    .ik-sideStrip::before {
+        content: "";
+        display: block;
+        background-image: url('../strip.png');
+        background-size: 260px 160px;
+        width: 260px;
+        height: 160px;
+        opacity: .5;
+        position: absolute;
+        bottom: 50px;
+        left: -15px;
+    }
+}
+
+/*-------------------=----------header-----------------------------*/
+
+.header img {
+    width: 130px !important;
+}
+
+.ikMenu {
+    background-color: white;
+    border-bottom: none !important;
+}
+
+.ikMenu ul{
+    display: block;
+    text-align: right;
+    float: left;
+}
+
+.headerLogo{
+    display: block;
+    margin-left: -20px;
+}
+
+/*-------------------=----------header-----------------------------*/
+
+
+/*-------------------=----------headline-----------------------------*/
+
+.headlineLeft {
+    width: 470px;
+    float: left;
+}
+
+.headlineRight {
+    width: 550px;
+    float: left;
+}
+
+.ik-headline-img{
+    width: 500px;
+    height: 325px;
+    object-fit: cover;
+    border-radius: 10px;
+    margin-top: 20px;
+    z-index: 999 !important;
+}
+
+.ik-sideStrip-headline{
+    position: relative;
+    z-index: -1;
+}
+
+.ik-sideStrip-headline::before {
+    content: "";
+    display: block;
+    background-image: url('../strip.png');
+    background-size: 360px 280px;
+    width: 360px;
+    height: 280px;
+    opacity: .3;
+    position: absolute;
+    top: -10px;
+    right: -15px;
+    z-index: -1;
+}
+
+
+.ik-date-p{
+    font-size: 14px;
+    font-weight: bolder;
+    color: #1E5DA9;
+}
+/*-------------------=----------end of headline-----------------------------*/
+
+/*-------------------=----------newTranding-----------------------------*/
+
+.newTranding{
+    width: 900px;
+    margin-left: 150px;
+    margin-right: auto;
+    position: relative;
+}
+
+
+.newTranding .panel{
+    width: 200px;
+    height: auto;
+    margin: 10px;
+    float: left;
+}
+
+.newTranding .panel p{
+    font-size: 12px;
+    font-weight: 500;
+    margin: 0px 0px 0px 0px;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    text-transform: lowercase;
+    height: 40px;
+}
+
+.newTranding .panel .time{
+    font-size: 10px;
+    color: #B6B6B6;
+}
+
+.newTranding .panel img{
+    width: 200px;
+    height: 124px;
+    border-radius: 5px;
+}
+
+
+/*-------------------=----------End newTranding-----------------------------*/
+
+
+
+
