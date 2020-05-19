@@ -13,6 +13,8 @@
 
 
 
+Route::get("/berita/{id}/{judul}", "beritaControl@detail");
 Route::post("/master/berita", "beritaControl@index");
+Route::post("/master/iklan", "iklanControl@index");
 
 Route::get("/{any}", "appControl@index")->where("any", ".*");

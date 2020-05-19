@@ -2,6 +2,10 @@ html, body{
     color: #000;
 }
 
+.bg-ocean {
+    background-color: #F2F6FF;
+}
+
 .text-right{
     text-align: right !important;
     display:block;
@@ -56,7 +60,7 @@ html, body{
     height: 180px;
     opacity: .5;
     position: absolute;
-    bottom: 32px;
+    bottom: 127px;
     left: -15px;
 }
 }
@@ -178,7 +182,7 @@ html, body{
     height: 40px;
 }
 
-.newTranding .panel .time{
+.time{
     font-size: 10px;
     color: #B6B6B6;
 }
@@ -193,5 +197,160 @@ html, body{
 /*-------------------=----------End newTranding-----------------------------*/
 
 
+.ik-newsHeadline-img{
+    width: 250px;
+    height: 165px;
+    border-radius: 5px;
+    object-fit: cover;
+    z-index: 2 !important;
+   
+}
+
+.newsHeadline{
+    width: 460px;
+    float: left;
+}
+
+.newsHeadline .keterangan{
+    position: absolute;
+    background: #F2F6FF;
+    padding: 5px;
+    width: 380px;
+    margin-top: -80px;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    text-transform: lowercase;
+    height: 72px;
+    font-weight: 600;
+    font-size: 14px;
+}
+
+.news-date{
+    font-size: 10px;
+    font-weight: 700;
+    color: white;
+    background-color: #F49445;
+    padding: 10px;
+}
+
+.newsHeadline p{
+    margin-top: 0px;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    text-transform: lowercase;
+    height: 40px;
+    font-weight: 600;
+    font-size: 14px;
+    margin: 0px;
+}
 
 
+.newsHeadline img{
+    width: 100%;
+    height: 345px;
+    border-radius: 5px;
+    object-fit: cover;
+}
+.newsGridFourH{
+    width: 250px;
+    float: left;
+    margin: 0px 10px 10px 10px;
+}
+
+.newsGridFourH p{
+    position: absolute;
+    background: #F2F6FF;
+    padding: 5px;
+    width: 200px;
+    margin-top: -58px;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    text-transform: lowercase;
+    height: 50px;
+    font-weight: 600;
+    font-size: 11px;
+}
+
+.newsLeft{
+    width: 670px;
+    background-color: white;
+    float: left;
+    margin: 0px 20px 0px 0px;
+}
+
+.newsLeft img{
+    width: 200px;
+    height: 120px;
+    border-radius: 5px;
+    object-fit: cover;
+    float: left;
+}
+
+.newsLeft .keterangan{
+    margin: 0px 10px 0px 215px;
+}
+
+.newsLeft .judul {
+    font-size: 18px;
+    line-height: 25px;
+    font-weight: bold;
+    margin: 0px;
+    color: #333;
+}
+
+.newsLeft .kategori {
+    font-size: 12px;
+    font-weight: 600;
+    margin: 0px;
+    color: #1E5DA9;
+}
+
+.newsLeft .wrap{
+    border-bottom: 5px solid #F2F6FF;
+    margin-bottom: 10px;
+}
+
+.newsRight{
+    width: 300px;
+    float: left;
+    overflow: hidden;
+}
+
+.newsRight img {
+    width: 100%;
+}
+
+.detailImage{
+    width: 100% !important;
+    height: auto !important;
+    object-fit: cover;
+}
+.imagecaption {
+    margin: 10px;
+    font-size: 10px;
+    line-height: 15px;
+    text-align: center;
+    color: #B6B6B6;
+}
+
+.judulDetail {
+    font-size: 24px;
+    line-height: 26px;
+    margin: 5px 0px 5px 0px;
+    font-weight: bold;
+}
+
+.isi_berita{
+    font-size: 16px !important;
+    line-height: 20px !important;
+    text-align: justify;
+}

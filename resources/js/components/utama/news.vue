@@ -1,0 +1,130 @@
+<template>
+    <div>
+        <section class="bg-ocean">
+            <div class="ik-container" style="margin-top:20px">
+                <div class="newsHeadline">
+                    <img :src="url.gambar+'/'+headline[0].Folder+'/'+headline[0].gambar" @click="Todetail('0')">
+                    <div class="keterangan">
+                        <p @click="Todetail('0')">{{headline[0].judul}}</p>
+                        <span class="time">{{moment(headline[0].tgl_publish).format("LL")}}, {{moment(headline[0].tgl_publish).startOf('day').fromNow()}}</span>
+                    </div>
+                </div>
+                <div class="newsGridFourH" v-for="(h,Hindex) in headline.slice(1)" :key="Hindex">
+                    <img :src="url.gambar+'/'+h.Folder+'/'+h.gambar" class="ik-newsHeadline-img" @click="Todetail(Hindex+1)">
+                    <p @click="Todetail(Hindex+1)">{{h.judul}}</p>
+                </div>
+                <div class="clearer"></div>
+
+                <div class="newsLeft">
+                    <div class="wrap" v-for="(h,Hindex) in Trending.slice(4)" :key="Hindex">
+                        <img :src="url.gambar+'/'+h.Folder+'/'+h.gambar" @click="TodetailTre(Hindex)">
+                        <div class="keterangan">
+                            <div v-if="h.kategori == null">-</div>
+                            <div v-else>
+                                <span class="kategori">{{h.kategori.nama_kategori}}</span>
+                            </div>
+                            <div class="judul" @click="TodetailTre(Hindex)">{{h.judul}}</div>
+                            <span class="time">{{moment(h.tgl_publish).format("LL")}}, {{moment(h.tgl_publish).startOf('day').fromNow()}}</span>
+                        </div>
+                        <div class="clearer"></div>
+                    </div>
+                </div>
+                <div class="newsRight" sticky-container :style="{'height' : righHeigh}">
+                    <div v-sticky sticky-offset="{top: 10, bottom: 0}" sticky-side="both" on-stick="onStick">
+                        <div v-for="(i,Iindex) in iklan" :key="Iindex">
+                            <img :src="url.iklan+'/'+i.iklan_name" class="">
+                        </div>
+                    </div>
+                </div>
+                <div class="clearer"></div>
+            </div>
+        </section>
+    </div>
+</template>
+
+<script>
+    import urlBase from '@/js/url'
+    import {
+        Hooper,
+        Slide,
+        Progress as HooperProgress
+    } from 'hooper'
+    import 'hooper/dist/hooper.css'
+    import moment from 'moment'
+
+
+    export default {
+        data() {
+            return {
+                righHeigh: "2500px",
+                headline: [],
+                Trending: [],
+                iklan: [],
+                url: {
+                    gambar: urlBase.urlThumbnailBerita,
+                    iklan: urlBase.iklan
+                }
+            }
+        },
+        mounted() {
+            console.log('Component mounted.')
+            this.getHeadline()
+            this.getTrending()
+            this.getIklan()
+        },
+        components: {
+            Hooper,
+            Slide,
+            HooperProgress,
+        },
+        methods: {
+            onStick(data) {
+                console.log(data);
+            },
+            truncate: function(text, length, suffix) {
+                return text.substring(0, length) + suffix;
+            },
+            moment(arg) {
+                moment.locale('id');
+                return moment(arg);
+            },
+            getHeadline() {
+                axios.post(urlBase.urlWeb + '/master/berita', {
+                        type: "BeritaByHeadline"
+                    })
+                    .then(r => {
+                        this.headline = r.data
+                    });
+            },
+            getTrending() {
+                axios.post(urlBase.urlWeb + '/master/berita', {
+                        type: "BeritaTrending"
+                    })
+                    .then(r => {
+                        console.log("trending"),
+                            console.log(r.data),
+                            this.Trending = r.data
+
+                    });
+            },
+            getIklan() {
+                axios.post(urlBase.urlWeb + '/master/iklan', {
+                        type: "iklanByposition",
+                        position: 'newsRigth'
+                    })
+                    .then(r => {
+                        this.iklan = r.data
+
+                    });
+            },
+            Todetail(i) {
+                window.location.href = urlBase.urlWeb + '/berita/' + this.headline[i].id_berita + '/' + this.headline[i].seo
+            },
+            TodetailTre(i) {
+                let a = i + 4;
+                window.location.href = urlBase.urlWeb + '/berita/' + this.Trending[a].id_berita + '/' + this.Trending[a].seo
+            },
+        },
+    }
+
+</script>

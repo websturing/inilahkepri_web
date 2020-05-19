@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\model\mdBerita;
 use Illuminate\Http\Request;
+use Illuminate\Support\Str;
 
 class beritaControl extends Controller
 {
@@ -15,10 +16,13 @@ class beritaControl extends Controller
         elseif($type == 'BeritaTrending'){
             return self::BeritaTrending($r);
         }
+        elseif($type == 'BeritaById'){
+            return self::BeritaById($r);
+        }
     }
 
     function BeritaByHeadline(Request $r){
-        $berita = mdBerita::where("headline", "true")
+        $berita = mdBerita::with('kategori')->where("headline", "true")
                             ->orderBy("tgl_publish","DESC")
                             ->orderBy("jam","DESC")
                             ->limit("5")
@@ -28,10 +32,34 @@ class beritaControl extends Controller
     }
 
     function BeritaTrending(Request $r){
-        $berita = mdBerita::orderBy("tgl_publish","DESC")
+        $berita = mdBerita::with('kategori')->orderBy("tgl_publish","DESC")
                             ->orderBy("jam","DESC")
-                            ->limit("10")
+                            ->limit("20")
                             ->get();
         return $berita;
+    }
+
+    function BeritaById(Request $r){
+        $id = $r->get("id");
+        $berita = mdBerita::with('kategori')
+                        ->where("id_berita", $id)
+                        ->get();
+
+        return $berita;
+
+    }
+    function detail(Request $r, $id, $judul){
+        
+
+        $berita = mdBerita::where('id_berita', $id)->get();
+
+        $urlLink = url()->full();
+        $folder = date("Ymd", strtotime($berita[0]->tgl_publish));
+        $description = Str::words($berita[0]->isi_berita, '30');
+        // $gambarLink = url('/storage/Artikel_Thumbnail/'.$folder.'/'.$berita[0]->gambar);
+        $gambarLink = 'http://inilahkepri.id/resources/Artikel_Thumbnail/'.$folder.'/'.$berita[0]->gambar;
+
+
+        return view('berita.detail', compact('id','berita','urlLink','description','gambarLink'));
     }
 }

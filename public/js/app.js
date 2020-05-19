@@ -1908,6 +1908,9 @@ module.exports = {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _js_url__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @/js/url */ "./resources/js/url.js");
+/* harmony import */ var _js_components_utama_headline__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @/js/components/utama/headline */ "./resources/js/components/utama/headline.vue");
+/* harmony import */ var _js_components_utama_news__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @/js/components/utama/news */ "./resources/js/components/utama/news.vue");
 //
 //
 //
@@ -1915,18 +1918,121 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
+
+
+
 /* harmony default export */ __webpack_exports__["default"] = ({
   mounted: function mounted() {
     console.log('Component mounted.');
+  },
+  components: {
+    headline: _js_components_utama_headline__WEBPACK_IMPORTED_MODULE_1__["default"],
+    news: _js_components_utama_news__WEBPACK_IMPORTED_MODULE_2__["default"]
+  }
+});
+
+/***/ }),
+
+/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/detail.vue?vue&type=script&lang=js&":
+/*!*****************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/detail.vue?vue&type=script&lang=js& ***!
+  \*****************************************************************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _js_url__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @/js/url */ "./resources/js/url.js");
+/* harmony import */ var hooper__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! hooper */ "./node_modules/hooper/dist/hooper.esm.js");
+/* harmony import */ var hooper_dist_hooper_css__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! hooper/dist/hooper.css */ "./node_modules/hooper/dist/hooper.css");
+/* harmony import */ var hooper_dist_hooper_css__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(hooper_dist_hooper_css__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var moment__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! moment */ "./node_modules/moment/moment.js");
+/* harmony import */ var moment__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(moment__WEBPACK_IMPORTED_MODULE_3__);
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+
+
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+  data: function data() {
+    return {
+      righHeigh: "2500px",
+      berita: [],
+      iklan: [],
+      url: {
+        gambar: _js_url__WEBPACK_IMPORTED_MODULE_0__["default"].urlThumbnailBerita,
+        iklan: _js_url__WEBPACK_IMPORTED_MODULE_0__["default"].iklan
+      }
+    };
+  },
+  mounted: function mounted() {
+    console.log('Component mounted.');
+    this.getBerita();
+    this.getIklan();
+  },
+  props: ['id'],
+  components: {
+    Hooper: hooper__WEBPACK_IMPORTED_MODULE_1__["Hooper"],
+    Slide: hooper__WEBPACK_IMPORTED_MODULE_1__["Slide"],
+    HooperProgress: hooper__WEBPACK_IMPORTED_MODULE_1__["Progress"]
+  },
+  methods: {
+    onStick: function onStick(data) {
+      console.log(data);
+    },
+    truncate: function truncate(text, length, suffix) {
+      return text.substring(0, length) + suffix;
+    },
+    moment: function moment(arg) {
+      moment__WEBPACK_IMPORTED_MODULE_3___default.a.locale('id');
+
+      return moment__WEBPACK_IMPORTED_MODULE_3___default()(arg);
+    },
+    getBerita: function getBerita() {
+      var _this = this;
+
+      axios.post(_js_url__WEBPACK_IMPORTED_MODULE_0__["default"].urlWeb + '/master/berita', {
+        type: "BeritaById",
+        id: this.id
+      }).then(function (r) {
+        _this.berita = r.data[0];
+      });
+    },
+    getIklan: function getIklan() {
+      var _this2 = this;
+
+      axios.post(_js_url__WEBPACK_IMPORTED_MODULE_0__["default"].urlWeb + '/master/iklan', {
+        type: "iklanByposition",
+        position: 'newsRigth'
+      }).then(function (r) {
+        _this2.iklan = r.data;
+      });
+    }
   }
 });
 
@@ -1936,6 +2042,128 @@ __webpack_require__.r(__webpack_exports__);
 /*!*************************************************************************************************************************************************************************!*\
   !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/utama/headline.vue?vue&type=script&lang=js& ***!
   \*************************************************************************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _js_url__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @/js/url */ "./resources/js/url.js");
+/* harmony import */ var hooper__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! hooper */ "./node_modules/hooper/dist/hooper.esm.js");
+/* harmony import */ var hooper_dist_hooper_css__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! hooper/dist/hooper.css */ "./node_modules/hooper/dist/hooper.css");
+/* harmony import */ var hooper_dist_hooper_css__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(hooper_dist_hooper_css__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var moment__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! moment */ "./node_modules/moment/moment.js");
+/* harmony import */ var moment__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(moment__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var _js_components_utama_news__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @/js/components/utama/news */ "./resources/js/components/utama/news.vue");
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+
+
+
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+  data: function data() {
+    return {
+      headline: [],
+      Trending: [],
+      url: {
+        gambar: _js_url__WEBPACK_IMPORTED_MODULE_0__["default"].urlThumbnailBerita
+      }
+    };
+  },
+  mounted: function mounted() {
+    console.log('Component mounted.');
+    this.getHeadline();
+    this.getTrending();
+  },
+  components: {
+    Hooper: hooper__WEBPACK_IMPORTED_MODULE_1__["Hooper"],
+    Slide: hooper__WEBPACK_IMPORTED_MODULE_1__["Slide"],
+    HooperProgress: hooper__WEBPACK_IMPORTED_MODULE_1__["Progress"],
+    news: _js_components_utama_news__WEBPACK_IMPORTED_MODULE_4__["default"]
+  },
+  methods: {
+    truncate: function truncate(text, length, suffix) {
+      return text.substring(0, length) + suffix;
+    },
+    moment: function moment(arg) {
+      moment__WEBPACK_IMPORTED_MODULE_3___default.a.locale('id');
+
+      return moment__WEBPACK_IMPORTED_MODULE_3___default()(arg);
+    },
+    getHeadline: function getHeadline() {
+      var _this = this;
+
+      axios.post(_js_url__WEBPACK_IMPORTED_MODULE_0__["default"].urlWeb + '/master/berita', {
+        type: "BeritaByHeadline"
+      }).then(function (r) {
+        _this.headline = r.data;
+      });
+    },
+    getTrending: function getTrending() {
+      var _this2 = this;
+
+      axios.post(_js_url__WEBPACK_IMPORTED_MODULE_0__["default"].urlWeb + '/master/berita', {
+        type: "BeritaTrending"
+      }).then(function (r) {
+        console.log("trending"), console.log(r.data), _this2.Trending = r.data;
+      });
+    },
+    Todetail: function Todetail(i) {
+      window.location.href = _js_url__WEBPACK_IMPORTED_MODULE_0__["default"].urlWeb + '/berita/' + this.headline[i].id_berita + '/' + this.headline[i].seo;
+    },
+    TodetailTre: function TodetailTre(i) {
+      window.location.href = _js_url__WEBPACK_IMPORTED_MODULE_0__["default"].urlWeb + '/berita/' + this.Trending[i].id_berita + '/' + this.Trending[i].seo;
+    }
+  }
+});
+
+/***/ }),
+
+/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/utama/news.vue?vue&type=script&lang=js&":
+/*!*********************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/utama/news.vue?vue&type=script&lang=js& ***!
+  \*********************************************************************************************************************************************************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -1988,6 +2216,9 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
 
 
 
@@ -1995,10 +2226,13 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
+      righHeigh: "2500px",
       headline: [],
       Trending: [],
+      iklan: [],
       url: {
-        gambar: _js_url__WEBPACK_IMPORTED_MODULE_0__["default"].urlThumbnailBerita
+        gambar: _js_url__WEBPACK_IMPORTED_MODULE_0__["default"].urlThumbnailBerita,
+        iklan: _js_url__WEBPACK_IMPORTED_MODULE_0__["default"].iklan
       }
     };
   },
@@ -2006,6 +2240,7 @@ __webpack_require__.r(__webpack_exports__);
     console.log('Component mounted.');
     this.getHeadline();
     this.getTrending();
+    this.getIklan();
   },
   components: {
     Hooper: hooper__WEBPACK_IMPORTED_MODULE_1__["Hooper"],
@@ -2013,6 +2248,9 @@ __webpack_require__.r(__webpack_exports__);
     HooperProgress: hooper__WEBPACK_IMPORTED_MODULE_1__["Progress"]
   },
   methods: {
+    onStick: function onStick(data) {
+      console.log(data);
+    },
     truncate: function truncate(text, length, suffix) {
       return text.substring(0, length) + suffix;
     },
@@ -2038,6 +2276,23 @@ __webpack_require__.r(__webpack_exports__);
       }).then(function (r) {
         console.log("trending"), console.log(r.data), _this2.Trending = r.data;
       });
+    },
+    getIklan: function getIklan() {
+      var _this3 = this;
+
+      axios.post(_js_url__WEBPACK_IMPORTED_MODULE_0__["default"].urlWeb + '/master/iklan', {
+        type: "iklanByposition",
+        position: 'newsRigth'
+      }).then(function (r) {
+        _this3.iklan = r.data;
+      });
+    },
+    Todetail: function Todetail(i) {
+      window.location.href = _js_url__WEBPACK_IMPORTED_MODULE_0__["default"].urlWeb + '/berita/' + this.headline[i].id_berita + '/' + this.headline[i].seo;
+    },
+    TodetailTre: function TodetailTre(i) {
+      var a = i + 4;
+      window.location.href = _js_url__WEBPACK_IMPORTED_MODULE_0__["default"].urlWeb + '/berita/' + this.Trending[a].id_berita + '/' + this.Trending[a].seo;
     }
   }
 });
@@ -57117,32 +57372,88 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _vm._m(0)
+  return _c("div", [_c("headline"), _vm._v(" "), _c("news")], 1)
 }
-var staticRenderFns = [
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "container" }, [
-      _c("div", { staticClass: "row justify-content-center" }, [
-        _c("div", { staticClass: "col-md-8" }, [
-          _c("div", { staticClass: "card" }, [
-            _c("div", { staticClass: "card-header" }, [
-              _vm._v("Example Component")
-            ]),
-            _vm._v(" "),
-            _c("div", { staticClass: "card-body" }, [
-              _vm._v(
-                "\n                    I'm an example component.\n                "
+var staticRenderFns = []
+render._withStripped = true
+
+
+
+/***/ }),
+
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/detail.vue?vue&type=template&id=742d4c48&":
+/*!*********************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/detail.vue?vue&type=template&id=742d4c48& ***!
+  \*********************************************************************************************************************************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "render", function() { return render; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return staticRenderFns; });
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c("div", [
+    _c("section", {}, [
+      _c("div", { staticClass: "ik-container" }, [
+        _c("div", { staticClass: "newsLeft" }, [
+          _c("div", { staticClass: "judulDetail" }, [
+            _vm._v(_vm._s(_vm.berita.judul))
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "is-kategori" }, [
+            _vm._v(
+              _vm._s(
+                _vm
+                  .moment(_vm.berita.tgl_publish)
+                  .startOf("day")
+                  .fromNow()
               )
+            )
+          ]),
+          _vm._v(" "),
+          _c("img", {
+            staticClass: "detailImage",
+            attrs: {
+              src:
+                _vm.url.gambar +
+                "/" +
+                _vm.berita.Folder +
+                "/" +
+                _vm.berita.gambar
+            }
+          }),
+          _vm._v(" "),
+          _c("div", { staticClass: "imagecaption" }, [
+            _vm._v(_vm._s(_vm.berita.ket_gambar))
+          ]),
+          _vm._v(" "),
+          _c("p", {
+            staticClass: "isi_berita",
+            domProps: { innerHTML: _vm._s(_vm.berita.isi_berita) }
+          })
+        ]),
+        _vm._v(" "),
+        _c(
+          "div",
+          { staticClass: "newsRight" },
+          _vm._l(_vm.iklan, function(i, Iindex) {
+            return _c("div", { key: Iindex }, [
+              _c("img", { attrs: { src: _vm.url.iklan + "/" + i.iklan_name } })
             ])
-          ])
-        ])
+          }),
+          0
+        ),
+        _vm._v(" "),
+        _c("div", { staticClass: "clearer" })
       ])
     ])
-  }
-]
+  ])
+}
+var staticRenderFns = []
 render._withStripped = true
 
 
@@ -57165,110 +57476,347 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", [
-    _c("section", { staticClass: "headline-content ik-sideStrip" }, [
+    _c(
+      "section",
+      {
+        staticClass: "headline-content ik-sideStrip",
+        staticStyle: { "margin-top": "-80px" }
+      },
+      [
+        _c(
+          "div",
+          { staticClass: "ik-container" },
+          [
+            _c(
+              "Hooper",
+              {
+                staticStyle: { height: "400px" },
+                attrs: { infiniteScroll: true, autoPlay: true, playSpeed: 4000 }
+              },
+              _vm._l(_vm.headline, function(h, Hindex) {
+                return _c("Slide", { key: h.id_berita }, [
+                  _c("div", { staticClass: "headlineLeft" }, [
+                    _c("div", { staticClass: "padd-10" }, [
+                      _c("span", { staticClass: "ik-date-p" }, [
+                        _vm._v(_vm._s(_vm.moment(h.tgl_publish).format("LL")))
+                      ]),
+                      _vm._v(" "),
+                      _c("h1", [_vm._v(_vm._s(h.judul))]),
+                      _vm._v(" "),
+                      _c("p", {
+                        domProps: {
+                          innerHTML: _vm._s(
+                            _vm.truncate(h.isi_berita, 300, "...")
+                          )
+                        }
+                      }),
+                      _vm._v(" "),
+                      _c(
+                        "span",
+                        {
+                          staticClass: "ik-date-p text-right",
+                          on: {
+                            click: function($event) {
+                              return _vm.Todetail(Hindex)
+                            }
+                          }
+                        },
+                        [
+                          _vm._v("Baca Selengkapnya "),
+                          _c("i", { staticClass: "fa fa-arrow-right" })
+                        ]
+                      )
+                    ])
+                  ]),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "headlineRight" }, [
+                    _c(
+                      "div",
+                      { staticClass: "padd-10 ik-sideStrip-headline" },
+                      [
+                        _c("img", {
+                          staticClass: "ik-headline-img",
+                          attrs: {
+                            src:
+                              _vm.url.gambar + "/" + h.Folder + "/" + h.gambar
+                          }
+                        })
+                      ]
+                    )
+                  ]),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "clearer" })
+                ])
+              }),
+              1
+            ),
+            _vm._v(" "),
+            _c(
+              "div",
+              { staticClass: "newTranding" },
+              [
+                _c(
+                  "Hooper",
+                  {
+                    staticStyle: { height: "250px" },
+                    attrs: {
+                      itemsToShow: 4,
+                      infiniteScroll: true,
+                      autoPlay: true,
+                      playSpeed: 5000
+                    }
+                  },
+                  _vm._l(_vm.Trending, function(t, tIndex) {
+                    return _c("Slide", { key: t.id_berita }, [
+                      _c("div", { staticClass: "panel" }, [
+                        _c("img", {
+                          staticClass: "ik-headline-img",
+                          attrs: {
+                            src:
+                              _vm.url.gambar + "/" + t.Folder + "/" + t.gambar
+                          },
+                          on: {
+                            click: function($event) {
+                              return _vm.TodetailTre(tIndex)
+                            }
+                          }
+                        }),
+                        _vm._v(" "),
+                        _c(
+                          "p",
+                          {
+                            on: {
+                              click: function($event) {
+                                return _vm.TodetailTre(tIndex)
+                              }
+                            }
+                          },
+                          [_vm._v(_vm._s(t.judul))]
+                        ),
+                        _vm._v(" "),
+                        _c("span", { staticClass: "time" }, [
+                          _vm._v(
+                            _vm._s(_vm.moment(t.tgl_publish).format("LL")) +
+                              ", " +
+                              _vm._s(
+                                _vm
+                                  .moment(t.tgl_publish)
+                                  .startOf("day")
+                                  .fromNow()
+                              )
+                          )
+                        ])
+                      ])
+                    ])
+                  }),
+                  1
+                )
+              ],
+              1
+            ),
+            _vm._v(" "),
+            _c("div", { staticClass: "clearer" })
+          ],
+          1
+        )
+      ]
+    )
+  ])
+}
+var staticRenderFns = []
+render._withStripped = true
+
+
+
+/***/ }),
+
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/utama/news.vue?vue&type=template&id=ff6235d2&":
+/*!*************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/utama/news.vue?vue&type=template&id=ff6235d2& ***!
+  \*************************************************************************************************************************************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "render", function() { return render; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return staticRenderFns; });
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c("div", [
+    _c("section", { staticClass: "bg-ocean" }, [
       _c(
         "div",
-        { staticClass: "ik-container" },
+        { staticClass: "ik-container", staticStyle: { "margin-top": "20px" } },
         [
+          _c("div", { staticClass: "newsHeadline" }, [
+            _c("img", {
+              attrs: {
+                src:
+                  _vm.url.gambar +
+                  "/" +
+                  _vm.headline[0].Folder +
+                  "/" +
+                  _vm.headline[0].gambar
+              },
+              on: {
+                click: function($event) {
+                  return _vm.Todetail("0")
+                }
+              }
+            }),
+            _vm._v(" "),
+            _c("div", { staticClass: "keterangan" }, [
+              _c(
+                "p",
+                {
+                  on: {
+                    click: function($event) {
+                      return _vm.Todetail("0")
+                    }
+                  }
+                },
+                [_vm._v(_vm._s(_vm.headline[0].judul))]
+              ),
+              _vm._v(" "),
+              _c("span", { staticClass: "time" }, [
+                _vm._v(
+                  _vm._s(_vm.moment(_vm.headline[0].tgl_publish).format("LL")) +
+                    ", " +
+                    _vm._s(
+                      _vm
+                        .moment(_vm.headline[0].tgl_publish)
+                        .startOf("day")
+                        .fromNow()
+                    )
+                )
+              ])
+            ])
+          ]),
+          _vm._v(" "),
+          _vm._l(_vm.headline.slice(1), function(h, Hindex) {
+            return _c("div", { key: Hindex, staticClass: "newsGridFourH" }, [
+              _c("img", {
+                staticClass: "ik-newsHeadline-img",
+                attrs: {
+                  src: _vm.url.gambar + "/" + h.Folder + "/" + h.gambar
+                },
+                on: {
+                  click: function($event) {
+                    return _vm.Todetail(Hindex + 1)
+                  }
+                }
+              }),
+              _vm._v(" "),
+              _c(
+                "p",
+                {
+                  on: {
+                    click: function($event) {
+                      return _vm.Todetail(Hindex + 1)
+                    }
+                  }
+                },
+                [_vm._v(_vm._s(h.judul))]
+              )
+            ])
+          }),
+          _vm._v(" "),
+          _c("div", { staticClass: "clearer" }),
+          _vm._v(" "),
           _c(
-            "Hooper",
-            {
-              staticStyle: { height: "400px" },
-              attrs: { infiniteScroll: true, autoPlay: true, playSpeed: 4000 }
-            },
-            _vm._l(_vm.headline, function(h, Hindex) {
-              return _c("Slide", { key: h.id_berita }, [
-                _c("div", { staticClass: "headlineLeft" }, [
-                  _c("div", { staticClass: "padd-10" }, [
-                    _c("span", { staticClass: "ik-date-p" }, [
-                      _vm._v(_vm._s(_vm.moment(h.tgl_publish).format("LL")))
-                    ]),
-                    _vm._v(" "),
-                    _c("h1", [_vm._v(_vm._s(h.judul))]),
-                    _vm._v(" "),
-                    _c("p", {
-                      domProps: {
-                        innerHTML: _vm._s(
-                          _vm.truncate(h.isi_berita, 300, "...")
-                        )
-                      }
-                    }),
-                    _vm._v(" "),
-                    _c("span", { staticClass: "ik-date-p text-right" }, [
-                      _vm._v("Baca Selengkapnya "),
-                      _c("i", { staticClass: "fa fa-arrow-right" })
-                    ])
-                  ])
-                ]),
+            "div",
+            { staticClass: "newsLeft" },
+            _vm._l(_vm.Trending.slice(4), function(h, Hindex) {
+              return _c("div", { key: Hindex, staticClass: "wrap" }, [
+                _c("img", {
+                  attrs: {
+                    src: _vm.url.gambar + "/" + h.Folder + "/" + h.gambar
+                  },
+                  on: {
+                    click: function($event) {
+                      return _vm.TodetailTre(Hindex)
+                    }
+                  }
+                }),
                 _vm._v(" "),
-                _c("div", { staticClass: "headlineRight" }, [
-                  _c("div", { staticClass: "padd-10 ik-sideStrip-headline" }, [
-                    _c("img", {
-                      staticClass: "ik-headline-img",
-                      attrs: {
-                        src: _vm.url.gambar + "/" + h.Folder + "/" + h.gambar
+                _c("div", { staticClass: "keterangan" }, [
+                  h.kategori == null
+                    ? _c("div", [_vm._v("-")])
+                    : _c("div", [
+                        _c("span", { staticClass: "kategori" }, [
+                          _vm._v(_vm._s(h.kategori.nama_kategori))
+                        ])
+                      ]),
+                  _vm._v(" "),
+                  _c(
+                    "div",
+                    {
+                      staticClass: "judul",
+                      on: {
+                        click: function($event) {
+                          return _vm.TodetailTre(Hindex)
+                        }
                       }
-                    })
+                    },
+                    [_vm._v(_vm._s(h.judul))]
+                  ),
+                  _vm._v(" "),
+                  _c("span", { staticClass: "time" }, [
+                    _vm._v(
+                      _vm._s(_vm.moment(h.tgl_publish).format("LL")) +
+                        ", " +
+                        _vm._s(
+                          _vm
+                            .moment(h.tgl_publish)
+                            .startOf("day")
+                            .fromNow()
+                        )
+                    )
                   ])
                 ]),
                 _vm._v(" "),
                 _c("div", { staticClass: "clearer" })
               ])
             }),
-            1
+            0
           ),
           _vm._v(" "),
           _c(
             "div",
-            { staticClass: "newTranding" },
+            {
+              staticClass: "newsRight",
+              style: { height: _vm.righHeigh },
+              attrs: { "sticky-container": "" }
+            },
             [
               _c(
-                "Hooper",
+                "div",
                 {
-                  staticStyle: { height: "250px" },
+                  directives: [{ name: "sticky", rawName: "v-sticky" }],
                   attrs: {
-                    itemsToShow: 4,
-                    infiniteScroll: true,
-                    autoPlay: true,
-                    playSpeed: 5000
+                    "sticky-offset": "{top: 10, bottom: 0}",
+                    "sticky-side": "both",
+                    "on-stick": "onStick"
                   }
                 },
-                _vm._l(_vm.Trending, function(t, tIndex) {
-                  return _c("Slide", { key: t.id_berita }, [
-                    _c("div", { staticClass: "panel" }, [
-                      _c("img", {
-                        staticClass: "ik-headline-img",
-                        attrs: {
-                          src: _vm.url.gambar + "/" + t.Folder + "/" + t.gambar
-                        }
-                      }),
-                      _vm._v(" "),
-                      _c("p", [_vm._v(_vm._s(t.judul))]),
-                      _vm._v(" "),
-                      _c("span", { staticClass: "time" }, [
-                        _vm._v(
-                          _vm._s(_vm.moment(t.tgl_publish).format("LL")) +
-                            ", " +
-                            _vm._s(
-                              _vm
-                                .moment(t.tgl_publish)
-                                .startOf("day")
-                                .fromNow()
-                            )
-                        )
-                      ])
-                    ])
+                _vm._l(_vm.iklan, function(i, Iindex) {
+                  return _c("div", { key: Iindex }, [
+                    _c("img", {
+                      attrs: { src: _vm.url.iklan + "/" + i.iklan_name }
+                    })
                   ])
                 }),
-                1
+                0
               )
-            ],
-            1
+            ]
           ),
           _vm._v(" "),
           _c("div", { staticClass: "clearer" })
         ],
-        1
+        2
       )
     ])
   ])
@@ -60314,6 +60862,344 @@ if (inBrowser && window.Vue) {
 }
 
 /* harmony default export */ __webpack_exports__["default"] = (VueRouter);
+
+
+/***/ }),
+
+/***/ "./node_modules/vue-sticky-directive/src/index.js":
+/*!********************************************************!*\
+  !*** ./node_modules/vue-sticky-directive/src/index.js ***!
+  \********************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _sticky__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./sticky */ "./node_modules/vue-sticky-directive/src/sticky.js");
+
+
+const install = function(Vue) {
+  Vue.directive('Sticky', _sticky__WEBPACK_IMPORTED_MODULE_0__["default"]);
+};
+
+if (window.Vue) {
+  Vue.use(install);
+}
+
+_sticky__WEBPACK_IMPORTED_MODULE_0__["default"].install = install;
+
+/* harmony default export */ __webpack_exports__["default"] = (_sticky__WEBPACK_IMPORTED_MODULE_0__["default"]);
+
+
+/***/ }),
+
+/***/ "./node_modules/vue-sticky-directive/src/sticky.js":
+/*!*********************************************************!*\
+  !*** ./node_modules/vue-sticky-directive/src/sticky.js ***!
+  \*********************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+const namespace = '@@vue-sticky-directive';
+const events = [
+  'resize',
+  'scroll',
+  'touchstart',
+  'touchmove',
+  'touchend',
+  'pageshow',
+  'load',
+];
+
+const batchStyle = (el, style = {}, className = {}) => {
+  for (let k in style) {
+    el.style[k] = style[k];
+  }
+  for (let k in className) {
+    if (className[k] && !el.classList.contains(k)) {
+      el.classList.add(k);
+    } else if (!className[k] && el.classList.contains(k)) {
+      el.classList.remove(k);
+    }
+  }
+};
+
+class Sticky {
+  constructor(el, vm) {
+    this.el = el;
+    this.vm = vm;
+    this.unsubscribers = [];
+    this.isPending = false;
+    this.state = {
+      isTopSticky: null,
+      isBottomSticky: null,
+      height: null,
+      width: null,
+      xOffset: null,
+    };
+
+    this.lastState = {
+      top: null,
+      bottom: null,
+      sticked: false,
+    };
+
+    const offset = this.getAttribute('sticky-offset') || {};
+    const side = this.getAttribute('sticky-side') || 'top';
+    const zIndex = this.getAttribute('sticky-z-index') || '10';
+    const onStick = this.getAttribute('on-stick') || null;
+
+    this.options = {
+      topOffset: Number(offset.top) || 0,
+      bottomOffset: Number(offset.bottom) || 0,
+      shouldTopSticky: side === 'top' || side === 'both',
+      shouldBottomSticky: side === 'bottom' || side === 'both',
+      zIndex: zIndex,
+      onStick: onStick,
+    };
+  }
+
+  doBind() {
+    if (this.unsubscribers.length > 0) {
+      return;
+    }
+    const { el, vm } = this;
+    vm.$nextTick(() => {
+      this.placeholderEl = document.createElement('div');
+      this.containerEl = this.getContainerEl();
+      el.parentNode.insertBefore(this.placeholderEl, el);
+      events.forEach(event => {
+        const fn = this.update.bind(this);
+        this.unsubscribers.push(() => window.removeEventListener(event, fn));
+        this.unsubscribers.push(() =>
+          this.containerEl.removeEventListener(event, fn),
+        );
+        window.addEventListener(event, fn, { passive: true });
+        this.containerEl.addEventListener(event, fn, { passive: true });
+      });
+    });
+  }
+
+  doUnbind() {
+    this.unsubscribers.forEach(fn => fn());
+    this.unsubscribers = [];
+    this.resetElement();
+  }
+
+  update() {
+    if (!this.isPending) {
+      requestAnimationFrame(() => {
+        this.isPending = false;
+        this.recomputeState();
+        this.updateElements();
+      });
+      this.isPending = true;
+    }
+  }
+
+  isTopSticky() {
+    if (!this.options.shouldTopSticky) return false;
+    const fromTop = this.state.placeholderElRect.top;
+    const fromBottom = this.state.containerElRect.bottom;
+
+    const topBreakpoint = this.options.topOffset;
+    const bottomBreakpoint = this.options.bottomOffset;
+
+    return fromTop <= topBreakpoint && fromBottom >= bottomBreakpoint;
+  }
+
+  isBottomSticky() {
+    if (!this.options.shouldBottomSticky) return false;
+    const fromBottom =
+      window.innerHeight - this.state.placeholderElRect.top - this.state.height;
+    const fromTop = window.innerHeight - this.state.containerElRect.top;
+
+    const topBreakpoint = this.options.topOffset;
+    const bottomBreakpoint = this.options.bottomOffset;
+
+    return fromBottom <= bottomBreakpoint && fromTop >= topBreakpoint;
+  }
+
+  recomputeState() {
+    this.state = Object.assign({}, this.state, {
+      height: this.getHeight(),
+      width: this.getWidth(),
+      xOffset: this.getXOffset(),
+      placeholderElRect: this.getPlaceholderElRect(),
+      containerElRect: this.getContainerElRect(),
+    });
+    this.state.isTopSticky = this.isTopSticky();
+    this.state.isBottomSticky = this.isBottomSticky();
+  }
+
+  fireEvents() {
+    if (
+      typeof this.options.onStick === 'function' &&
+      (this.lastState.top !== this.state.isTopSticky ||
+        this.lastState.bottom !== this.state.isBottomSticky ||
+        this.lastState.sticked !==
+          (this.state.isTopSticky || this.state.isBottomSticky))
+    ) {
+      this.lastState = {
+        top: this.state.isTopSticky,
+        bottom: this.state.isBottomSticky,
+        sticked: this.state.isBottomSticky || this.state.isTopSticky,
+      };
+      this.options.onStick(this.lastState);
+    }
+  }
+
+  updateElements() {
+    const placeholderStyle = { paddingTop: 0 };
+    const elStyle = {
+      position: 'static',
+      top: 'auto',
+      bottom: 'auto',
+      left: 'auto',
+      width: 'auto',
+      zIndex: this.options.zIndex,
+    };
+    const placeholderClassName = { 'vue-sticky-placeholder': true };
+    const elClassName = {
+      'vue-sticky-el': true,
+      'top-sticky': false,
+      'bottom-sticky': false,
+    };
+
+    if (this.state.isTopSticky) {
+      elStyle.position = 'fixed';
+      elStyle.top = this.options.topOffset + 'px';
+      elStyle.left = this.state.xOffset + 'px';
+      elStyle.width = this.state.width + 'px';
+      const bottomLimit =
+        this.state.containerElRect.bottom -
+        this.state.height -
+        this.options.bottomOffset -
+        this.options.topOffset;
+      if (bottomLimit < 0) {
+        elStyle.top = bottomLimit + this.options.topOffset + 'px';
+      }
+      placeholderStyle.paddingTop = this.state.height + 'px';
+      elClassName['top-sticky'] = true;
+    } else if (this.state.isBottomSticky) {
+      elStyle.position = 'fixed';
+      elStyle.bottom = this.options.bottomOffset + 'px';
+      elStyle.left = this.state.xOffset + 'px';
+      elStyle.width = this.state.width + 'px';
+      const topLimit =
+        window.innerHeight -
+        this.state.containerElRect.top -
+        this.state.height -
+        this.options.bottomOffset -
+        this.options.topOffset;
+      if (topLimit < 0) {
+        elStyle.bottom = topLimit + this.options.bottomOffset + 'px';
+      }
+      placeholderStyle.paddingTop = this.state.height + 'px';
+      elClassName['bottom-sticky'] = true;
+    } else {
+      placeholderStyle.paddingTop = 0;
+    }
+
+    batchStyle(this.el, elStyle, elClassName);
+    batchStyle(this.placeholderEl, placeholderStyle, placeholderClassName);
+
+    this.fireEvents();
+  }
+
+  resetElement() {
+    ['position', 'top', 'bottom', 'left', 'width', 'zIndex'].forEach(attr => {
+      this.el.style.removeProperty(attr);
+    });
+    this.el.classList.remove('bottom-sticky', 'top-sticky');
+    const { parentNode } = this.placeholderEl;
+    if (parentNode) {
+      parentNode.removeChild(this.placeholderEl);
+    }
+  }
+
+  getContainerEl() {
+    let node = this.el.parentNode;
+    while (
+      node &&
+      node.tagName !== 'HTML' &&
+      node.tagName !== 'BODY' &&
+      node.nodeType === 1
+    ) {
+      if (node.hasAttribute('sticky-container')) {
+        return node;
+      }
+      node = node.parentNode;
+    }
+    return this.el.parentNode;
+  }
+
+  getXOffset() {
+    return this.placeholderEl.getBoundingClientRect().left;
+  }
+
+  getWidth() {
+    return this.placeholderEl.getBoundingClientRect().width;
+  }
+
+  getHeight() {
+    return this.el.getBoundingClientRect().height;
+  }
+
+  getPlaceholderElRect() {
+    return this.placeholderEl.getBoundingClientRect();
+  }
+
+  getContainerElRect() {
+    return this.containerEl.getBoundingClientRect();
+  }
+
+  getAttribute(name) {
+    const expr = this.el.getAttribute(name);
+    let result = undefined;
+    if (expr) {
+      if (this.vm[expr]) {
+        result = this.vm[expr];
+      } else {
+        try {
+          result = eval(`(${expr})`);
+        } catch (error) {
+          result = expr;
+        }
+      }
+    }
+    return result;
+  }
+}
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+  inserted(el, bind, vnode) {
+    if (typeof bind.value === 'undefined' || bind.value) {
+      el[namespace] = new Sticky(el, vnode.context);
+      el[namespace].doBind();
+    }
+  },
+  unbind(el, bind, vnode) {
+    if (el[namespace]) {
+      el[namespace].doUnbind();
+      el[namespace] = undefined;
+    }
+  },
+  componentUpdated(el, bind, vnode) {
+    if (typeof bind.value === 'undefined' || bind.value) {
+      if (!el[namespace]) {
+        el[namespace] = new Sticky(el, vnode.context);
+      }
+      el[namespace].doBind();
+    } else {
+      if (el[namespace]) {
+        el[namespace].doUnbind();
+      }
+    }
+  },
+});
 
 
 /***/ }),
@@ -72382,12 +73268,20 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.common.js");
 /* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(vue__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var _js_routes_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @/js/routes.js */ "./resources/js/routes.js");
+/* harmony import */ var _js_components_detail__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @/js/components/detail */ "./resources/js/components/detail.vue");
+/* harmony import */ var vue_sticky_directive__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! vue-sticky-directive */ "./node_modules/vue-sticky-directive/src/index.js");
 
 
 
+
+
+vue__WEBPACK_IMPORTED_MODULE_1___default.a.use(vue_sticky_directive__WEBPACK_IMPORTED_MODULE_4__["default"]);
 var app = new vue__WEBPACK_IMPORTED_MODULE_1___default.a({
   el: '#app',
-  router: _js_routes_js__WEBPACK_IMPORTED_MODULE_2__["default"]
+  router: _js_routes_js__WEBPACK_IMPORTED_MODULE_2__["default"],
+  components: {
+    beritaDetail: _js_components_detail__WEBPACK_IMPORTED_MODULE_3__["default"]
+  }
 });
 
 /***/ }),
@@ -72506,6 +73400,75 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./resources/js/components/detail.vue":
+/*!********************************************!*\
+  !*** ./resources/js/components/detail.vue ***!
+  \********************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _detail_vue_vue_type_template_id_742d4c48___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./detail.vue?vue&type=template&id=742d4c48& */ "./resources/js/components/detail.vue?vue&type=template&id=742d4c48&");
+/* harmony import */ var _detail_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./detail.vue?vue&type=script&lang=js& */ "./resources/js/components/detail.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport *//* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+
+
+
+
+
+/* normalize component */
+
+var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
+  _detail_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
+  _detail_vue_vue_type_template_id_742d4c48___WEBPACK_IMPORTED_MODULE_0__["render"],
+  _detail_vue_vue_type_template_id_742d4c48___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
+  false,
+  null,
+  null,
+  null
+  
+)
+
+/* hot reload */
+if (false) { var api; }
+component.options.__file = "resources/js/components/detail.vue"
+/* harmony default export */ __webpack_exports__["default"] = (component.exports);
+
+/***/ }),
+
+/***/ "./resources/js/components/detail.vue?vue&type=script&lang=js&":
+/*!*********************************************************************!*\
+  !*** ./resources/js/components/detail.vue?vue&type=script&lang=js& ***!
+  \*********************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_detail_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/babel-loader/lib??ref--4-0!../../../node_modules/vue-loader/lib??vue-loader-options!./detail.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/detail.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_detail_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
+
+/***/ }),
+
+/***/ "./resources/js/components/detail.vue?vue&type=template&id=742d4c48&":
+/*!***************************************************************************!*\
+  !*** ./resources/js/components/detail.vue?vue&type=template&id=742d4c48& ***!
+  \***************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_detail_vue_vue_type_template_id_742d4c48___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../node_modules/vue-loader/lib??vue-loader-options!./detail.vue?vue&type=template&id=742d4c48& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/detail.vue?vue&type=template&id=742d4c48&");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_detail_vue_vue_type_template_id_742d4c48___WEBPACK_IMPORTED_MODULE_0__["render"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_detail_vue_vue_type_template_id_742d4c48___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
+
+
+
+/***/ }),
+
 /***/ "./resources/js/components/utama/headline.vue":
 /*!****************************************************!*\
   !*** ./resources/js/components/utama/headline.vue ***!
@@ -72575,6 +73538,75 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./resources/js/components/utama/news.vue":
+/*!************************************************!*\
+  !*** ./resources/js/components/utama/news.vue ***!
+  \************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _news_vue_vue_type_template_id_ff6235d2___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./news.vue?vue&type=template&id=ff6235d2& */ "./resources/js/components/utama/news.vue?vue&type=template&id=ff6235d2&");
+/* harmony import */ var _news_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./news.vue?vue&type=script&lang=js& */ "./resources/js/components/utama/news.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport *//* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+
+
+
+
+
+/* normalize component */
+
+var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
+  _news_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
+  _news_vue_vue_type_template_id_ff6235d2___WEBPACK_IMPORTED_MODULE_0__["render"],
+  _news_vue_vue_type_template_id_ff6235d2___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
+  false,
+  null,
+  null,
+  null
+  
+)
+
+/* hot reload */
+if (false) { var api; }
+component.options.__file = "resources/js/components/utama/news.vue"
+/* harmony default export */ __webpack_exports__["default"] = (component.exports);
+
+/***/ }),
+
+/***/ "./resources/js/components/utama/news.vue?vue&type=script&lang=js&":
+/*!*************************************************************************!*\
+  !*** ./resources/js/components/utama/news.vue?vue&type=script&lang=js& ***!
+  \*************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_news_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/babel-loader/lib??ref--4-0!../../../../node_modules/vue-loader/lib??vue-loader-options!./news.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/utama/news.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_news_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
+
+/***/ }),
+
+/***/ "./resources/js/components/utama/news.vue?vue&type=template&id=ff6235d2&":
+/*!*******************************************************************************!*\
+  !*** ./resources/js/components/utama/news.vue?vue&type=template&id=ff6235d2& ***!
+  \*******************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_news_vue_vue_type_template_id_ff6235d2___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../../node_modules/vue-loader/lib??vue-loader-options!./news.vue?vue&type=template&id=ff6235d2& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/utama/news.vue?vue&type=template&id=ff6235d2&");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_news_vue_vue_type_template_id_ff6235d2___WEBPACK_IMPORTED_MODULE_0__["render"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_news_vue_vue_type_template_id_ff6235d2___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
+
+
+
+/***/ }),
+
 /***/ "./resources/js/routes.js":
 /*!********************************!*\
   !*** ./resources/js/routes.js ***!
@@ -72590,6 +73622,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _js_url__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @/js/url */ "./resources/js/url.js");
 /* harmony import */ var _js_components_dashboard__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @/js/components/dashboard */ "./resources/js/components/dashboard.vue");
 /* harmony import */ var _js_components_utama_headline__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @/js/components/utama/headline */ "./resources/js/components/utama/headline.vue");
+/* harmony import */ var _js_components_utama_news__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @/js/components/utama/news */ "./resources/js/components/utama/news.vue");
+/* harmony import */ var _js_components_detail__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @/js/components/detail */ "./resources/js/components/detail.vue");
+
+
 
 
 
@@ -72603,7 +73639,7 @@ var router = new vue_router__WEBPACK_IMPORTED_MODULE_1__["default"]({
   routes: [{
     path: '/',
     name: '/',
-    component: _js_components_utama_headline__WEBPACK_IMPORTED_MODULE_4__["default"]
+    component: _js_components_dashboard__WEBPACK_IMPORTED_MODULE_3__["default"]
   }]
 });
 /* harmony default export */ __webpack_exports__["default"] = (router);
@@ -72622,7 +73658,8 @@ __webpack_require__.r(__webpack_exports__);
 var urlAxios = "http://localhost/inilahkepri_web/api";
 var urlBase = "inilahkepri_web";
 var urlWeb = "http://localhost/inilahkepri_web";
-var urlThumbnailBerita = "http://localhost/inilahkepri_mobile/storage/Artikel_Thumbnail"; // const urlAxios = "http://192.168.100.8/inilahkepri_mobile/api";
+var urlThumbnailBerita = "http://inilahkepri.id/resources/Artikel_Thumbnail";
+var iklan = "http://localhost/inilahkepri_web/public/iklan"; // const urlAxios = "http://192.168.100.8/inilahkepri_mobile/api";
 // const urlBase = "inilahkepri_mobile";
 // const urlWeb = "http://192.168.100.8/inilahkepri_mobile";
 // const urlAxios = "http://tukangketik.my.id/inilahkepri_mobile/api";
@@ -72633,7 +73670,8 @@ var urlThumbnailBerita = "http://localhost/inilahkepri_mobile/storage/Artikel_Th
   urlAxios: urlAxios,
   urlBase: urlBase,
   urlWeb: urlWeb,
-  urlThumbnailBerita: urlThumbnailBerita
+  urlThumbnailBerita: urlThumbnailBerita,
+  iklan: iklan
 });
 
 /***/ }),

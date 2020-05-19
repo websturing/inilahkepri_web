@@ -4,6 +4,8 @@ import VueRouter from 'vue-router';
 import urlBase from '@/js/url';
 import Dashboard from '@/js/components/dashboard';
 import headline from '@/js/components/utama/headline';
+import news from '@/js/components/utama/news';
+import detail from '@/js/components/detail';
 
 
 Vue.use(VueRouter);
@@ -16,7 +18,7 @@ const router = new VueRouter({
         {
             path: '/',
             name: '/',
-            component: headline,
+            component: Dashboard,
         },
     ]
 });
