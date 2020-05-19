@@ -73651,9 +73651,30 @@ var router = new vue_router__WEBPACK_IMPORTED_MODULE_1__["default"]({
   !*** ./resources/js/url.js ***!
   \*****************************/
 /*! exports provided: default */
-/***/ (function(module, exports) {
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
-throw new Error("Module build failed (from ./node_modules/babel-loader/lib/index.js):\nSyntaxError: C:\\xampp\\htdocs\\inilahkepri_web\\resources\\js\\url.js: Identifier 'urlAxios' has already been declared (11:6)\n\n   9 | // const urlWeb = \"http://192.168.100.8/inilahkepri_mobile\";\n  10 | \n> 11 | const urlAxios = \"http://tukangketik.my.id/inilahkepri_web/api\";\n     |       ^\n  12 | const urlBase = \"inilahkepri_web\";\n  13 | const urlWeb = \"http://tukangketik.my.id/inilahkepri_web\";\n  14 | const urlThumbnailBerita = \"http://inilahkepri.id/resources/Artikel_Thumbnail\";\n    at Parser._raise (C:\\xampp\\htdocs\\inilahkepri_web\\node_modules\\@babel\\parser\\lib\\index.js:742:17)\n    at Parser.raiseWithData (C:\\xampp\\htdocs\\inilahkepri_web\\node_modules\\@babel\\parser\\lib\\index.js:735:17)\n    at Parser.raise (C:\\xampp\\htdocs\\inilahkepri_web\\node_modules\\@babel\\parser\\lib\\index.js:729:17)\n    at ScopeHandler.checkRedeclarationInScope (C:\\xampp\\htdocs\\inilahkepri_web\\node_modules\\@babel\\parser\\lib\\index.js:4769:12)\n    at ScopeHandler.declareName (C:\\xampp\\htdocs\\inilahkepri_web\\node_modules\\@babel\\parser\\lib\\index.js:4735:12)\n    at Parser.checkLVal (C:\\xampp\\htdocs\\inilahkepri_web\\node_modules\\@babel\\parser\\lib\\index.js:9207:22)\n    at Parser.parseVarId (C:\\xampp\\htdocs\\inilahkepri_web\\node_modules\\@babel\\parser\\lib\\index.js:11762:10)\n    at Parser.parseVar (C:\\xampp\\htdocs\\inilahkepri_web\\node_modules\\@babel\\parser\\lib\\index.js:11737:12)\n    at Parser.parseVarStatement (C:\\xampp\\htdocs\\inilahkepri_web\\node_modules\\@babel\\parser\\lib\\index.js:11549:10)\n    at Parser.parseStatementContent (C:\\xampp\\htdocs\\inilahkepri_web\\node_modules\\@babel\\parser\\lib\\index.js:11148:21)\n    at Parser.parseStatement (C:\\xampp\\htdocs\\inilahkepri_web\\node_modules\\@babel\\parser\\lib\\index.js:11081:17)\n    at Parser.parseBlockOrModuleBlockBody (C:\\xampp\\htdocs\\inilahkepri_web\\node_modules\\@babel\\parser\\lib\\index.js:11656:25)\n    at Parser.parseBlockBody (C:\\xampp\\htdocs\\inilahkepri_web\\node_modules\\@babel\\parser\\lib\\index.js:11642:10)\n    at Parser.parseTopLevel (C:\\xampp\\htdocs\\inilahkepri_web\\node_modules\\@babel\\parser\\lib\\index.js:11012:10)\n    at Parser.parse (C:\\xampp\\htdocs\\inilahkepri_web\\node_modules\\@babel\\parser\\lib\\index.js:12637:10)\n    at parse (C:\\xampp\\htdocs\\inilahkepri_web\\node_modules\\@babel\\parser\\lib\\index.js:12688:38)\n    at parser (C:\\xampp\\htdocs\\inilahkepri_web\\node_modules\\@babel\\core\\lib\\parser\\index.js:54:34)\n    at parser.next (<anonymous>)\n    at normalizeFile (C:\\xampp\\htdocs\\inilahkepri_web\\node_modules\\@babel\\core\\lib\\transformation\\normalize-file.js:93:38)\n    at normalizeFile.next (<anonymous>)\n    at run (C:\\xampp\\htdocs\\inilahkepri_web\\node_modules\\@babel\\core\\lib\\transformation\\index.js:31:50)\n    at run.next (<anonymous>)\n    at Function.transform (C:\\xampp\\htdocs\\inilahkepri_web\\node_modules\\@babel\\core\\lib\\transform.js:27:41)\n    at transform.next (<anonymous>)\n    at step (C:\\xampp\\htdocs\\inilahkepri_web\\node_modules\\gensync\\index.js:254:32)\n    at C:\\xampp\\htdocs\\inilahkepri_web\\node_modules\\gensync\\index.js:266:13\n    at async.call.result.err.err (C:\\xampp\\htdocs\\inilahkepri_web\\node_modules\\gensync\\index.js:216:11)");
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+//const urlAxios = "http://localhost/inilahkepri_web/api";
+//const urlBase = "inilahkepri_web";
+//const urlWeb = "http://localhost/inilahkepri_web";
+//const urlThumbnailBerita = "http://inilahkepri.id/resources/Artikel_Thumbnail";
+//const iklan = "http://localhost/inilahkepri_web/public/iklan";
+// const urlAxios = "http://192.168.100.8/inilahkepri_mobile/api";
+// const urlBase = "inilahkepri_mobile";
+// const urlWeb = "http://192.168.100.8/inilahkepri_mobile";
+var urlAxios = "http://tukangketik.my.id/inilahkepri_web/api";
+var urlBase = "inilahkepri_web";
+var urlWeb = "http://tukangketik.my.id/inilahkepri_web";
+var urlThumbnailBerita = "http://inilahkepri.id/resources/Artikel_Thumbnail";
+var iklan = "http://localhost/inilahkepri_web/public/iklan";
+/* harmony default export */ __webpack_exports__["default"] = ({
+  urlAxios: urlAxios,
+  urlBase: urlBase,
+  urlWeb: urlWeb,
+  urlThumbnailBerita: urlThumbnailBerita,
+  iklan: iklan
+});
 
 /***/ }),
 
