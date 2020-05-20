@@ -12,7 +12,7 @@ class appControl extends Controller
         $agent = new Agent();
         
         if($agent->isMobile()){
-            return Redirect::to('http://www.tukanngketik.my.id/inilahkepri_mobile');
+            return Redirect::to('http://www.tukangketik.my.id/inilahkepri_mobile');
         }
         else{
             return view('welcome');
