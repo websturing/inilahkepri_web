@@ -57501,7 +57501,17 @@ var render = function() {
                         _vm._v(_vm._s(_vm.moment(h.tgl_publish).format("LL")))
                       ]),
                       _vm._v(" "),
-                      _c("h1", [_vm._v(_vm._s(h.judul))]),
+                      _c(
+                        "h1",
+                        {
+                          on: {
+                            click: function($event) {
+                              return _vm.Todetail(Hindex)
+                            }
+                          }
+                        },
+                        [_vm._v(_vm._s(h.judul))]
+                      ),
                       _vm._v(" "),
                       _c("p", {
                         domProps: {

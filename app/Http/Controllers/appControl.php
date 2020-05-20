@@ -3,10 +3,20 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Jenssegers\Agent\Agent;
 
 class appControl extends Controller
 {
     function index(){
-        return view('welcome');
+        $agent = new Agent();
+        
+        if($agent->isMobile()){
+            return Redirect::to('http://www.google.com');
+        }
+        else{
+            return view('welcome');
+        }
+        
+        
     }
 }

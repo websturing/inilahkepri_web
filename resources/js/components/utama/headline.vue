@@ -7,7 +7,7 @@
                         <div class="headlineLeft">
                             <div class="padd-10">
                                 <span class="ik-date-p">{{moment(h.tgl_publish).format("LL")}}</span>
-                                <h1>{{h.judul}}</h1>
+                                <h1 @click="Todetail(Hindex)">{{h.judul}}</h1>
                                 <p v-html="truncate(h.isi_berita,300, '...')"></p>
                                 <span class="ik-date-p text-right" @click="Todetail(Hindex)">Baca Selengkapnya <i class="fa fa-arrow-right"></i></span>
                             </div>
