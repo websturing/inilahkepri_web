@@ -27,7 +27,7 @@
                         <Slide v-for="(t, tIndex)  in Trending" :key="t.id_berita">
                             <div class="panel">
                                 <img :src="url.gambar+'/'+t.Folder+'/'+t.gambar" class="ik-headline-img" @click="TodetailTre(tIndex)">
-                                <p @click="TodetailTre(tIndex)">{{t.judul}}</p>
+                                <p @click="TodetailTre(tIndex)" class="judulTrending">{{t.judul}}</p>
                                 <span class="time">{{moment(t.tgl_publish).format("LL")}}, {{moment(t.tgl_publish).startOf('day').fromNow()}}</span>
                             </div>
                         </Slide>
@@ -100,12 +100,22 @@
                     });
             },
             Todetail(i) {
-                window.location.href = urlBase.urlWeb + '/berita/' + this.headline[i].id_berita + '/' + this.headline[i].seo
+                window.location.href = urlBase.urlWeb + this.headline[i].LinkTo
             },
             TodetailTre(i) {
-                window.location.href = urlBase.urlWeb + '/berita/' + this.Trending[i].id_berita + '/' + this.Trending[i].seo
+                window.location.href = urlBase.urlWeb + this.Trending[i].LinkTo
             },
         },
     }
 
 </script>
+<style>
+    .judulTrending {
+        cursor: pointer;
+    }
+
+    .ik-date-p {
+        cursor: pointer;
+    }
+
+</style>

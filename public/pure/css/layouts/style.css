@@ -1,4 +1,5 @@
-html, body{
+html,
+body {
     color: #000;
 }
 
@@ -6,24 +7,24 @@ html, body{
     background-color: #F2F6FF;
 }
 
-.text-right{
+.text-right {
     text-align: right !important;
-    display:block;
+    display: block;
 }
 
-.ik-container{
-    width : 1024px !important;
+.ik-container {
+    width: 1024px !important;
     height: auto;
-    margin-left:auto;
-    margin-right:auto;
+    margin-left: auto;
+    margin-right: auto;
 }
 
-.ik-container h1{
+.ik-container h1 {
     margin-top: 0px;
     line-height: 35px;
 }
 
-.ik-container p{
+.ik-container p {
     font-size: 12px;
     font-family: "Open Sans";
     font-weight: 500;
@@ -31,39 +32,43 @@ html, body{
 }
 
 
-.padd-10{
+.padd-10 {
     padding: 10;
     margin: 10px;
 }
 
-.clearer{
+.clearer {
     clear: both;
 }
 
-.headline-content{
+.headline-content {
     background: white !important;
     z-index: 1;
-    position: relative; /* needed for footer positioning*/
-    min-height: 100% !important; /* real browsers */
+    position: relative;
+    /* needed for footer positioning*/
+    min-height: 100% !important;
+    /* real browsers */
 }
 
-.ik-sideStrip{
+.ik-sideStrip {
     position: relative;
 }
+
 @media (min-width: 1368px) {
-.ik-sideStrip::before {
-    content: "";
-    display: block;
-    background-image: url('../strip.png');
-    background-size: 340px 180px;
-    width: 340px;
-    height: 180px;
-    opacity: .5;
-    position: absolute;
-    bottom: 127px;
-    left: -15px;
+    .ik-sideStrip::before {
+        content: "";
+        display: block;
+        background-image: url('../strip.png');
+        background-size: 340px 180px;
+        width: 340px;
+        height: 180px;
+        opacity: .5;
+        position: absolute;
+        bottom: 127px;
+        left: -15px;
+    }
 }
-}
+
 @media (min-width: 600px) and (max-width:1367px) {
     .ik-sideStrip::before {
         content: "";
@@ -90,13 +95,13 @@ html, body{
     border-bottom: none !important;
 }
 
-.ikMenu ul{
+.ikMenu ul {
     display: block;
     text-align: right;
     float: left;
 }
 
-.headerLogo{
+.headerLogo {
     display: block;
     margin-left: -20px;
 }
@@ -116,7 +121,7 @@ html, body{
     float: left;
 }
 
-.ik-headline-img{
+.ik-headline-img {
     width: 500px;
     height: 325px;
     object-fit: cover;
@@ -125,7 +130,7 @@ html, body{
     z-index: 999 !important;
 }
 
-.ik-sideStrip-headline{
+.ik-sideStrip-headline {
     position: relative;
     z-index: -1;
 }
@@ -145,16 +150,17 @@ html, body{
 }
 
 
-.ik-date-p{
+.ik-date-p {
     font-size: 14px;
     font-weight: bolder;
     color: #1E5DA9;
 }
+
 /*-------------------=----------end of headline-----------------------------*/
 
 /*-------------------=----------newTranding-----------------------------*/
 
-.newTranding{
+.newTranding {
     width: 900px;
     margin-left: 150px;
     margin-right: auto;
@@ -162,14 +168,14 @@ html, body{
 }
 
 
-.newTranding .panel{
+.newTranding .panel {
     width: 200px;
     height: auto;
     margin: 10px;
     float: left;
 }
 
-.newTranding .panel p{
+.newTranding .panel p {
     font-size: 12px;
     font-weight: 500;
     margin: 0px 0px 0px 0px;
@@ -182,12 +188,12 @@ html, body{
     height: 40px;
 }
 
-.time{
+.time {
     font-size: 10px;
     color: #B6B6B6;
 }
 
-.newTranding .panel img{
+.newTranding .panel img {
     width: 200px;
     height: 124px;
     border-radius: 5px;
@@ -197,21 +203,21 @@ html, body{
 /*-------------------=----------End newTranding-----------------------------*/
 
 
-.ik-newsHeadline-img{
+.ik-newsHeadline-img {
     width: 250px;
     height: 165px;
     border-radius: 5px;
     object-fit: cover;
     z-index: 2 !important;
-   
+
 }
 
-.newsHeadline{
+.newsHeadline {
     width: 460px;
     float: left;
 }
 
-.newsHeadline .keterangan{
+.newsHeadline .keterangan {
     position: absolute;
     background: #F2F6FF;
     padding: 5px;
@@ -228,7 +234,7 @@ html, body{
     font-size: 14px;
 }
 
-.news-date{
+.news-date {
     font-size: 10px;
     font-weight: 700;
     color: white;
@@ -236,7 +242,7 @@ html, body{
     padding: 10px;
 }
 
-.newsHeadline p{
+.newsHeadline p {
     margin-top: 0px;
     display: -webkit-box;
     -webkit-line-clamp: 2;
@@ -251,19 +257,20 @@ html, body{
 }
 
 
-.newsHeadline img{
+.newsHeadline img {
     width: 100%;
     height: 345px;
     border-radius: 5px;
     object-fit: cover;
 }
-.newsGridFourH{
+
+.newsGridFourH {
     width: 250px;
     float: left;
     margin: 0px 10px 10px 10px;
 }
 
-.newsGridFourH p{
+.newsGridFourH p {
     position: absolute;
     background: #F2F6FF;
     padding: 5px;
@@ -280,14 +287,14 @@ html, body{
     font-size: 11px;
 }
 
-.newsLeft{
+.newsLeft {
     width: 670px;
     background-color: white;
     float: left;
     margin: 0px 20px 0px 0px;
 }
 
-.newsLeft img{
+.newsLeft img {
     width: 200px;
     height: 120px;
     border-radius: 5px;
@@ -295,7 +302,7 @@ html, body{
     float: left;
 }
 
-.newsLeft .keterangan{
+.newsLeft .keterangan {
     margin: 0px 10px 0px 215px;
 }
 
@@ -305,6 +312,7 @@ html, body{
     font-weight: bold;
     margin: 0px;
     color: #333;
+    cursor: pointer;
 }
 
 .newsLeft .kategori {
@@ -314,12 +322,12 @@ html, body{
     color: #1E5DA9;
 }
 
-.newsLeft .wrap{
+.newsLeft .wrap {
     border-bottom: 5px solid #F2F6FF;
     margin-bottom: 10px;
 }
 
-.newsRight{
+.newsRight {
     width: 300px;
     float: left;
     overflow: hidden;
@@ -329,11 +337,12 @@ html, body{
     width: 100%;
 }
 
-.detailImage{
+.detailImage {
     width: 100% !important;
     height: auto !important;
     object-fit: cover;
 }
+
 .imagecaption {
     margin: 10px;
     font-size: 10px;
@@ -349,7 +358,7 @@ html, body{
     font-weight: bold;
 }
 
-.isi_berita{
+.isi_berita {
     font-size: 16px !important;
     line-height: 20px !important;
     text-align: justify;

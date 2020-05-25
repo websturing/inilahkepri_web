@@ -17,16 +17,22 @@
 
                 <div class="newsLeft">
                     <div class="wrap" v-for="(h,Hindex) in Trending.slice(4)" :key="Hindex">
-                        <img :src="url.gambar+'/'+h.Folder+'/'+h.gambar" @click="TodetailTre(Hindex)">
-                        <div class="keterangan">
-                            <div v-if="h.kategori == null">-</div>
-                            <div v-else>
-                                <span class="kategori">{{h.kategori.nama_kategori}}</span>
+                        <div>
+                            <img :src="url.gambar+'/'+h.Folder+'/'+h.gambar" @click="TodetailTre(Hindex)">
+                            <div class="keterangan">
+                                <div v-if="h.kategori == null">-</div>
+                                <div v-else>
+                                    <span class="kategori">{{h.kategori.nama_kategori}}</span>
+                                </div>
+                                <div class="judul" @click="TodetailTre(Hindex)">{{h.judul}}</div>
+                                <span class="time">{{moment(h.tgl_publish).format("LL")}}, {{moment(h.tgl_publish).startOf('day').fromNow()}}</span>
                             </div>
-                            <div class="judul" @click="TodetailTre(Hindex)">{{h.judul}}</div>
-                            <span class="time">{{moment(h.tgl_publish).format("LL")}}, {{moment(h.tgl_publish).startOf('day').fromNow()}}</span>
+                            <div class="clearer"></div>
                         </div>
-                        <div class="clearer"></div>
+                        <div v-if="Hindex == 5">
+                            <album></album>
+                        </div>
+
                     </div>
                 </div>
                 <div class="newsRight" sticky-container :style="{'height' : righHeigh}">
@@ -51,6 +57,7 @@
     } from 'hooper'
     import 'hooper/dist/hooper.css'
     import moment from 'moment'
+    import album from '@/js/components/utama/album';
 
 
     export default {
@@ -76,6 +83,7 @@
             Hooper,
             Slide,
             HooperProgress,
+            album
         },
         methods: {
             onStick(data) {
@@ -118,11 +126,11 @@
                     });
             },
             Todetail(i) {
-                window.location.href = urlBase.urlWeb + '/berita/' + this.headline[i].id_berita + '/' + this.headline[i].seo
+                window.location.href = urlBase.urlWeb + this.headline[i].LinkTo
             },
             TodetailTre(i) {
                 let a = i + 4;
-                window.location.href = urlBase.urlWeb + '/berita/' + this.Trending[a].id_berita + '/' + this.Trending[a].seo
+                window.location.href = urlBase.urlWeb + this.Trending[i].LinkTo
             },
         },
     }

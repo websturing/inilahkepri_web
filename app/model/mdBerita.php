@@ -11,13 +11,20 @@ class mdBerita extends Model
 
     protected $appends = [
         'Folder',
-        'seo'
+        'seo',
+        'LinkTo'
     ];
 
     function getFolderAttribute() {
         $crypt = date("Ymd", strtotime($this->tgl_publish));
         return $crypt;
     }
+    
+    function getLinkToAttribute(){
+        $seo = str_slug($this->judul,"-");
+        return "/berita/".$this->id_berita."/".$seo;
+    }
+    
     function getseoAttribute() {
         $crypt = str_slug($this->judul,"-");
         return $crypt;
