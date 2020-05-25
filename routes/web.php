@@ -14,6 +14,9 @@
 
 
 Route::get("/berita/{id}/{judul}", "beritaControl@detail");
+
+Route::get("/album/{id}/{judul}", "AlbumControl@detail");
+
 Route::post("/master/berita", "beritaControl@index");
 Route::post("/master/iklan", "iklanControl@index");
 Route::post("/master/album", "AlbumControl@index");

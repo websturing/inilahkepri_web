@@ -57,7 +57,7 @@
     } from 'hooper'
     import 'hooper/dist/hooper.css'
     import moment from 'moment'
-    import album from '@/js/components/utama/album';
+    import album from '@/js/components/album/component';
 
 
     export default {

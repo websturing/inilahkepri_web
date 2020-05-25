@@ -6,7 +6,6 @@ import Dashboard from '@/js/components/dashboard';
 import headline from '@/js/components/utama/headline';
 import news from '@/js/components/utama/news';
 import detail from '@/js/components/detail';
-import album from '@/js/components/utama/album';
 
 
 Vue.use(VueRouter);

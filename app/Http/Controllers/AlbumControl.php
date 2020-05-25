@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\model\mdAlbum;
+use Illuminate\Support\Str;
 
 
 class AlbumControl extends Controller
@@ -18,5 +19,20 @@ class AlbumControl extends Controller
     function BeritaByDate(Request $r){
         $album = mdAlbum::all();
         return $album;
+    }
+    
+    function detail(Request $r, $id, $judul){
+        
+        $album = mdAlbum::where('id_album', $id)->get();
+        
+        
+
+        $urlLink = url()->full();
+        $folder = 'album';
+        $description = Str::words($album[0]->deskripsi, '30');
+        $gambarLink = 'http://inilahkepri.id/resources/album/'.$folder.'/'.$album[0]->foto;
+
+
+        return view('album.detail', compact('id','album','urlLink','description','gambarLink'));
     }
 }

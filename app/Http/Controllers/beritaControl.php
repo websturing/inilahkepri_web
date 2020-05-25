@@ -50,7 +50,6 @@ class beritaControl extends Controller
     }
     function detail(Request $r, $id, $judul){
         
-
         $berita = mdBerita::where('id_berita', $id)->get();
 
         $urlLink = url()->full();
