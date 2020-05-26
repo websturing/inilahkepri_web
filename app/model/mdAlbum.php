@@ -17,4 +17,8 @@ class mdAlbum extends Model
         $seo = str_slug($this->judul,"-");
         return "/album/".$this->id_album."/".$seo;
     }
+    
+    function gallery(){
+        return $this->hasMany(mdGallery::class, 'id_album');
+    }
 }

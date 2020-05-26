@@ -10,5 +10,5 @@
 @endsection
 
 @section('content')
-<h1>Album</h1>
+<album-Detail :id="{{ $id }}"></album-Detail>
 @endsection

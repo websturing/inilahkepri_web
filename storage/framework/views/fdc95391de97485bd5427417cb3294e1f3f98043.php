@@ -9,7 +9,7 @@
 <?php $__env->stopSection(); ?>
 
 <?php $__env->startSection('content'); ?>
-<h1>Album</h1>
+<album-Detail :id="<?php echo e($id); ?>"></album-Detail>
 <?php $__env->stopSection(); ?>
 
 <?php echo $__env->make('welcome', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH C:\xampp\htdocs\inilahkepri_web\resources\views/album/detail.blade.php ENDPATH**/ ?>

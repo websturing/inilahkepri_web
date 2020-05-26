@@ -14,12 +14,24 @@ class AlbumControl extends Controller
         if($type == 'BeritaByDate'){
             return self::BeritaByDate($r);
         }
+        elseif($type == 'AlbumById'){
+            return self::AlbumById($r);
+        }
     }
     
     function BeritaByDate(Request $r){
         $album = mdAlbum::all();
         return $album;
     }
+    function AlbumById(Request $r){
+        $album = mdAlbum::with(['gallery'])
+                        ->where('id_album', $r->get("id"))
+                        ->get();
+        
+        return $album;
+        
+    }
+    
     
     function detail(Request $r, $id, $judul){
         

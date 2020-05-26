@@ -2,24 +2,9 @@
     <div>
         <section class="bg-ocean" style="padding-top:10px">
             <div class="ik-container" style="margin-top:20px">
-                <div v-for="(a,Aindex) in album.slice(0,1)">
-                    <div class="AbmJudul">
-                        {{a.judul}}
-                        <div class="time">{{moment(a.tanggal).format("LL")}}</div>
-                    </div>
-                    <div class="abm-img">
-                        <img :src="url.album+'/'+a.foto">
-                    </div>
-                    <div class="clearer"></div>
-                </div>
-
-                <div v-for="(a,Aindex) in album.slice(1,4)">
-                    <div class="galleryOther">
-                        <img :src="url.album+'/'+a.foto">
-                        <div class="judulGallery" @click="ToLink(Aindex)">{{a.judul}}</div>
-                        <div class="time">{{moment(a.tanggal).format("LL")}}</div>
-                    </div>
-                </div>
+                <pre>
+                {{album}}
+                </pre>
             </div>
         </section>
     </div>
@@ -39,8 +24,8 @@
     export default {
         data() {
             return {
-                righHeigh: "2500px",
-                album: [],
+
+                album: {},
                 iklan: [],
                 url: {
                     gambar: urlBase.urlThumbnailBerita,
@@ -58,6 +43,7 @@
             Slide,
             HooperProgress,
         },
+        props: ['id'],
         methods: {
             moment(arg) {
                 moment.locale('id');
@@ -65,15 +51,12 @@
             },
             getAlbum() {
                 axios.post(urlBase.urlWeb + '/master/album', {
-                        type: "BeritaByDate"
+                        type: "AlbumById",
+                        id: this.id
                     })
                     .then(r => {
-                        this.album = r.data
+                        this.album = r.data[0]
                     });
-            },
-            ToLink(i) {
-                let a = i + 1;
-                window.location.href = urlBase.urlWeb + this.album[a].LinkTo
             },
         },
     }
