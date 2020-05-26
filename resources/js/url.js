@@ -26,4 +26,5 @@ export default {
     urlThumbnailBerita: urlThumbnailBerita,
     iklan: iklan,
     album: album,
+    gallery: gallery,
 }

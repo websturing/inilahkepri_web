@@ -3,7 +3,7 @@
         <section class="bg-ocean" style="padding-top:10px">
             <div class="ik-container" style="margin-top:20px">
                 <div v-for="(a,Aindex) in album.slice(0,1)">
-                    <div class="AbmJudul">
+                    <div class="AbmJudul" @click="ToLink(Aindex)">
                         {{a.judul}}
                         <div class="time">{{moment(a.tanggal).format("LL")}}</div>
                     </div>
@@ -87,6 +87,7 @@
         font-size: 20px;
         line-height: 23px;
         font-weight: 600;
+        cursor: pointer;
     }
 
     .abm-img {

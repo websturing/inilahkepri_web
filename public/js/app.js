@@ -2018,6 +2018,21 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 
 
@@ -2028,6 +2043,7 @@ __webpack_require__.r(__webpack_exports__);
       album: {},
       iklan: [],
       url: {
+        gallery: _js_url__WEBPACK_IMPORTED_MODULE_0__["default"].gallery,
         gambar: _js_url__WEBPACK_IMPORTED_MODULE_0__["default"].urlThumbnailBerita,
         iklan: _js_url__WEBPACK_IMPORTED_MODULE_0__["default"].iklan,
         album: _js_url__WEBPACK_IMPORTED_MODULE_0__["default"].album
@@ -7036,7 +7052,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 
 
 // module
-exports.push([module.i, "\n.AbmJudul {\n    float: left;\n    width: 460px;\n    margin-right: 10px;\n    font-size: 20px;\n    line-height: 23px;\n    font-weight: 600;\n}\n.abm-img {\n    float: left;\n    width: 200px;\n}\n.abm-img img {\n    width: 200px;\n    height: 180px;\n    -o-object-fit: cover;\n       object-fit: cover;\n    border-radius: 5px;\n}\n.galleryOther {\n    font-size: 14px;\n    float: left;\n    width: 223px;\n    min-height: 220px;\n    padding: 5px;\n}\n.galleryOther img {\n    width: 100%;\n    -o-object-fit: cover;\n       object-fit: cover;\n    height: 120px;\n    border-radius: 10px;\n}\n.judulGallery {\n    font-size: 13px;\n    line-height: 16px;\n    cursor: pointer;\n}\n\n", ""]);
+exports.push([module.i, "\n.AbmJudul {\n    float: left;\n    width: 460px;\n    margin-right: 10px;\n    font-size: 20px;\n    line-height: 23px;\n    font-weight: 600;\n    cursor: pointer;\n}\n.abm-img {\n    float: left;\n    width: 200px;\n}\n.abm-img img {\n    width: 200px;\n    height: 180px;\n    -o-object-fit: cover;\n       object-fit: cover;\n    border-radius: 5px;\n}\n.galleryOther {\n    font-size: 14px;\n    float: left;\n    width: 223px;\n    min-height: 220px;\n    padding: 5px;\n}\n.galleryOther img {\n    width: 100%;\n    -o-object-fit: cover;\n       object-fit: cover;\n    height: 120px;\n    border-radius: 10px;\n}\n.judulGallery {\n    font-size: 13px;\n    line-height: 16px;\n    cursor: pointer;\n}\n\n", ""]);
 
 // exports
 
@@ -7055,7 +7071,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 
 
 // module
-exports.push([module.i, "\n.AbmJudul {\n    float: left;\n    width: 460px;\n    margin-right: 10px;\n    font-size: 20px;\n    line-height: 23px;\n    font-weight: 600;\n}\n.abm-img {\n    float: left;\n    width: 200px;\n}\n.abm-img img {\n    width: 200px;\n    height: 180px;\n    -o-object-fit: cover;\n       object-fit: cover;\n    border-radius: 5px;\n}\n.galleryOther {\n    font-size: 14px;\n    float: left;\n    width: 223px;\n    min-height: 220px;\n    padding: 5px;\n}\n.galleryOther img {\n    width: 100%;\n    -o-object-fit: cover;\n       object-fit: cover;\n    height: 120px;\n    border-radius: 10px;\n}\n.judulGallery {\n    font-size: 13px;\n    line-height: 16px;\n    cursor: pointer;\n}\n\n", ""]);
+exports.push([module.i, "\nhr {\n    border: 1px solid #B6B6B6;\n}\n.AlbumHeadline {\n    width: 1366px;\n    margin-left: auto;\n    margin-right: auto;\n}\n.AlbumHeadline .albumLeft {\n    float: left;\n    width: 450px;\n}\n.AlbumHeadline #judul {\n    float: left;\n    width: 450px;\n    font-size: 24px;\n    padding-right: 5px;\n    font-weight: bold;\n}\n.AlbumHeadline .description {\n    font-size: 13px;\n    padding: 0px 15px 5px 5px;\n    text-align: justify;\n    font-weight: 400;\n}\n.AlbumHeadline .albumRight {\n    float: left;\n    width: 916px;\n}\n.gallery {\n    width: 300px;\n    float: left;\n    padding: 5px;\n    border-radius: 10px;\n    min-height: 280px;\n    -o-object-fit: cover;\n       object-fit: cover;\n    box-shadow: 7px -7px 31px -20px rgba(182, 182, 182, 0.92);\n}\n.is-kategori {\n    font-size: 13px;\n    font-weight: 400;\n    font-size: 10px;\n    color: #B6B6B6;\n}\n\n", ""]);
 
 // exports
 
@@ -57708,16 +57724,27 @@ var render = function() {
           [
             _vm._l(_vm.album.slice(0, 1), function(a, Aindex) {
               return _c("div", [
-                _c("div", { staticClass: "AbmJudul" }, [
-                  _vm._v(
-                    "\n                    " +
-                      _vm._s(a.judul) +
-                      "\n                    "
-                  ),
-                  _c("div", { staticClass: "time" }, [
-                    _vm._v(_vm._s(_vm.moment(a.tanggal).format("LL")))
-                  ])
-                ]),
+                _c(
+                  "div",
+                  {
+                    staticClass: "AbmJudul",
+                    on: {
+                      click: function($event) {
+                        return _vm.ToLink(Aindex)
+                      }
+                    }
+                  },
+                  [
+                    _vm._v(
+                      "\n                    " +
+                        _vm._s(a.judul) +
+                        "\n                    "
+                    ),
+                    _c("div", { staticClass: "time" }, [
+                      _vm._v(_vm._s(_vm.moment(a.tanggal).format("LL")))
+                    ])
+                  ]
+                ),
                 _vm._v(" "),
                 _c("div", { staticClass: "abm-img" }, [
                   _c("img", { attrs: { src: _vm.url.album + "/" + a.foto } })
@@ -57785,18 +57812,57 @@ var render = function() {
       "section",
       { staticClass: "bg-ocean", staticStyle: { "padding-top": "10px" } },
       [
-        _c(
-          "div",
-          {
-            staticClass: "ik-container",
-            staticStyle: { "margin-top": "20px" }
-          },
-          [
-            _c("pre", [
-              _vm._v("            " + _vm._s(_vm.album) + "\n            ")
-            ])
-          ]
-        )
+        _c("div", { staticStyle: { "margin-top": "20px" } }, [
+          _c("div", { staticClass: "AlbumHeadline" }, [
+            _c("div", { staticClass: "albumLeft" }, [
+              _c("div", { attrs: { id: "judul" } }, [
+                _vm._v(
+                  "\n                        " +
+                    _vm._s(_vm.album.judul) +
+                    "\n                        "
+                ),
+                _c("div", { staticClass: "is-kategori" }, [
+                  _vm._v(
+                    _vm._s(
+                      _vm
+                        .moment(_vm.album.tanggal)
+                        .startOf("day")
+                        .fromNow()
+                    )
+                  )
+                ]),
+                _vm._v(" "),
+                _c("hr"),
+                _vm._v(" "),
+                _c("div", {
+                  staticClass: "description",
+                  domProps: { innerHTML: _vm._s(_vm.album.deskripsi) }
+                })
+              ])
+            ]),
+            _vm._v(" "),
+            _c(
+              "div",
+              { staticClass: "albumRight" },
+              [
+                _c("img", {
+                  staticClass: "gallery",
+                  attrs: { src: _vm.url.album + "/" + _vm.album.foto }
+                }),
+                _vm._v(" "),
+                _vm._l(_vm.album.gallery, function(g, gIndex) {
+                  return _c("span", { key: gIndex }, [
+                    _c("img", {
+                      staticClass: "gallery",
+                      attrs: { src: _vm.url.gallery + "/" + g.foto }
+                    })
+                  ])
+                })
+              ],
+              2
+            )
+          ])
+        ])
       ]
     )
   ])
@@ -74339,7 +74405,8 @@ var gallery = "http://inilahkepri.id/resources/gallery"; // const urlAxios = "ht
   urlWeb: urlWeb,
   urlThumbnailBerita: urlThumbnailBerita,
   iklan: iklan,
-  album: album
+  album: album,
+  gallery: gallery
 });
 
 /***/ }),

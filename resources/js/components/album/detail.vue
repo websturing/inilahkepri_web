@@ -1,10 +1,25 @@
 <template>
     <div>
         <section class="bg-ocean" style="padding-top:10px">
-            <div class="ik-container" style="margin-top:20px">
-                <pre>
-                {{album}}
-                </pre>
+            <div class="" style="margin-top:20px">
+                <div class="AlbumHeadline">
+                    <div class="albumLeft">
+                        <div id="judul">
+                            {{album.judul}}
+                            <div class="is-kategori">{{moment(album.tanggal).startOf('day').fromNow()}}</div>
+                            <hr />
+                            <div class="description" v-html="album.deskripsi"></div>
+                        </div>
+
+
+                    </div>
+                    <div class="albumRight">
+                        <img :src="url.album+'/'+album.foto" class="gallery">
+                        <span v-for="(g,gIndex) in album.gallery" :key="gIndex">
+                            <img :src="url.gallery+'/'+g.foto" class="gallery">
+                        </span>
+                    </div>
+                </div>
             </div>
         </section>
     </div>
@@ -28,9 +43,10 @@
                 album: {},
                 iklan: [],
                 url: {
+                    gallery: urlBase.gallery,
                     gambar: urlBase.urlThumbnailBerita,
                     iklan: urlBase.iklan,
-                    album: urlBase.album
+                    album: urlBase.album,
                 }
             }
         },
@@ -63,46 +79,58 @@
 
 </script>
 <style>
-    .AbmJudul {
+    hr {
+        border: 1px solid #B6B6B6;
+    }
+
+    .AlbumHeadline {
+        width: 1366px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .AlbumHeadline .albumLeft {
         float: left;
-        width: 460px;
-        margin-right: 10px;
-        font-size: 20px;
-        line-height: 23px;
-        font-weight: 600;
+        width: 450px;
     }
 
-    .abm-img {
+    .AlbumHeadline #judul {
         float: left;
-        width: 200px;
+        width: 450px;
+        font-size: 24px;
+        padding-right: 5px;
+        font-weight: bold;
     }
 
-    .abm-img img {
-        width: 200px;
-        height: 180px;
-        object-fit: cover;
-        border-radius: 5px;
-    }
-
-    .galleryOther {
-        font-size: 14px;
-        float: left;
-        width: 223px;
-        min-height: 220px;
-        padding: 5px;
-    }
-
-    .galleryOther img {
-        width: 100%;
-        object-fit: cover;
-        height: 120px;
-        border-radius: 10px;
-    }
-
-    .judulGallery {
+    .AlbumHeadline .description {
         font-size: 13px;
-        line-height: 16px;
-        cursor: pointer;
+        padding: 0px 15px 5px 5px;
+        text-align: justify;
+        font-weight: 400;
+    }
+
+    .AlbumHeadline .albumRight {
+        float: left;
+        width: 916px;
+    }
+
+    .gallery {
+        width: 300px;
+        float: left;
+        padding: 5px;
+        border-radius: 10px;
+        min-height: 280px;
+        object-fit: cover;
+        -webkit-box-shadow: 7px -7px 31px -20px rgba(182, 182, 182, 0.92);
+        -moz-box-shadow: 7px -7px 31px -20px rgba(182, 182, 182, 0.92);
+        box-shadow: 7px -7px 31px -20px rgba(182, 182, 182, 0.92);
+    }
+
+    .is-kategori {
+        font-size: 13px;
+        font-weight: 400;
+        font-size: 10px;
+        color: #B6B6B6;
     }
 
 </style>
