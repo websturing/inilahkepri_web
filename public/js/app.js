@@ -74470,13 +74470,14 @@ var router = new vue_router__WEBPACK_IMPORTED_MODULE_1__["default"]({
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-var urlAxios = "http://localhost/inilahkepri_web/api";
-var urlBase = "inilahkepri_web";
-var urlWeb = "http://localhost/inilahkepri_web";
-var urlThumbnailBerita = "http://inilahkepri.id/resources/Artikel_Thumbnail";
-var iklan = "http://localhost/inilahkepri_web/public/iklan";
-var album = "http://inilahkepri.id/resources/album";
-var gallery = "http://inilahkepri.id/resources/gallery"; // const urlAxios = "http://192.168.100.8/inilahkepri_mobile/api";
+//const urlAxios = "http://localhost/inilahkepri_web/api";
+//const urlBase = "inilahkepri_web";
+//const urlWeb = "http://localhost/inilahkepri_web";
+//const urlThumbnailBerita = "http://inilahkepri.id/resources/Artikel_Thumbnail";
+//const iklan = "http://localhost/inilahkepri_web/public/iklan";
+//const album = "http://inilahkepri.id/resources/album";
+//const gallery = "http://inilahkepri.id/resources/gallery";
+// const urlAxios = "http://192.168.100.8/inilahkepri_mobile/api";
 // const urlBase = "inilahkepri_mobile";
 // const urlWeb = "http://192.168.100.8/inilahkepri_mobile";
 //var urlAxios = "http://tukangketik.my.id/inilahkepri_web/api";
@@ -74487,14 +74488,13 @@ var gallery = "http://inilahkepri.id/resources/gallery"; // const urlAxios = "ht
 //const album = "http://localhost/inilahkepri_web/public/iklan";
 //const gallery = "http://localhost/inilahkepri_web/public/iklan";
 //
-//const urlAxios = "http://inilahkepri.id/api";
-//const urlBase = "";
-//const urlWeb = "http://inilahkepri.id";
-//const urlThumbnailBerita = "http://inilahkepri.id/resources/Artikel_Thumbnail";
-//const iklan = "http://inilahkepri.id/public/iklan";
-//const album = "http://inilahkepri.id/resources/album";
-//const gallery = "http://inilahkepri.id/resources/gallery";
-
+var urlAxios = "http://inilahkepri.id/api";
+var urlBase = "";
+var urlWeb = "http://inilahkepri.id";
+var urlThumbnailBerita = "http://inilahkepri.id/resources/Artikel_Thumbnail";
+var iklan = "http://inilahkepri.id/public/iklan";
+var album = "http://inilahkepri.id/resources/album";
+var gallery = "http://inilahkepri.id/resources/gallery";
 /* harmony default export */ __webpack_exports__["default"] = ({
   urlAxios: urlAxios,
   urlBase: urlBase,
