@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\model\mdBerita;
 use Illuminate\Http\Request;
+use Jenssegers\Agent\Agent;
 use Illuminate\Support\Str;
 
 class beritaControl extends Controller
@@ -57,8 +58,17 @@ class beritaControl extends Controller
         $description = Str::words($berita[0]->isi_berita, '30');
         // $gambarLink = url('/storage/Artikel_Thumbnail/'.$folder.'/'.$berita[0]->gambar);
         $gambarLink = 'http://inilahkepri.id/resources/Artikel_Thumbnail/'.$folder.'/'.$berita[0]->gambar;
+        
+         $seo = str_slug($berita[0]->judul,"-");    
+        $agent = new Agent();
+    
+        if($agent->isMobile()){
+            return Redirect::to('https://m.inilahkepri.id/berita/'.$id.'/'.$seo);
+        }
+        else{
+            return view('berita.detail', compact('id','berita','urlLink','description','gambarLink'));
+        }
 
-
-        return view('berita.detail', compact('id','berita','urlLink','description','gambarLink'));
+        
     }
 }
