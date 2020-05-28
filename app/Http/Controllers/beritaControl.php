@@ -6,6 +6,7 @@ use App\model\mdBerita;
 use Illuminate\Http\Request;
 use Jenssegers\Agent\Agent;
 use Illuminate\Support\Str;
+use Redirect;
 
 class beritaControl extends Controller
 {
