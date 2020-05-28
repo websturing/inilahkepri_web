@@ -56,6 +56,7 @@
             console.log('Component mounted.')
             this.getBerita()
             this.getIklan()
+            this.AddViewer()
         },
         computed: {
             preiklanByRightContent() {
@@ -107,6 +108,15 @@
                     })
                     .then(r => {
                         this.berita = r.data[0]
+                    });
+            },
+            AddViewer() {
+                axios.post(urlBase.urlWeb + '/master/berita', {
+                        type: "AddViewer",
+                        id: this.id
+                    })
+                    .then(r => {
+                        console.log(r.data)
                     });
             },
             getIklan() {

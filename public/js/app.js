@@ -2180,6 +2180,7 @@ __webpack_require__.r(__webpack_exports__);
     console.log('Component mounted.');
     this.getBerita();
     this.getIklan();
+    this.AddViewer();
   },
   computed: {
     preiklanByRightContent: function preiklanByRightContent() {
@@ -2241,6 +2242,14 @@ __webpack_require__.r(__webpack_exports__);
         id: this.id
       }).then(function (r) {
         _this3.berita = r.data[0];
+      });
+    },
+    AddViewer: function AddViewer() {
+      axios.post(_js_url__WEBPACK_IMPORTED_MODULE_0__["default"].urlWeb + '/master/berita', {
+        type: "AddViewer",
+        id: this.id
+      }).then(function (r) {
+        console.log(r.data);
       });
     },
     getIklan: function getIklan() {
@@ -74461,14 +74470,13 @@ var router = new vue_router__WEBPACK_IMPORTED_MODULE_1__["default"]({
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-//const urlAxios = "http://localhost/inilahkepri_web/api";
-//const urlBase = "inilahkepri_web";
-//const urlWeb = "http://localhost/inilahkepri_web";
-//const urlThumbnailBerita = "http://inilahkepri.id/resources/Artikel_Thumbnail";
-//const iklan = "http://localhost/inilahkepri_web/public/iklan";
-//const album = "http://inilahkepri.id/resources/album";
-//const gallery = "http://inilahkepri.id/resources/gallery";
-// const urlAxios = "http://192.168.100.8/inilahkepri_mobile/api";
+var urlAxios = "http://localhost/inilahkepri_web/api";
+var urlBase = "inilahkepri_web";
+var urlWeb = "http://localhost/inilahkepri_web";
+var urlThumbnailBerita = "http://inilahkepri.id/resources/Artikel_Thumbnail";
+var iklan = "http://localhost/inilahkepri_web/public/iklan";
+var album = "http://inilahkepri.id/resources/album";
+var gallery = "http://inilahkepri.id/resources/gallery"; // const urlAxios = "http://192.168.100.8/inilahkepri_mobile/api";
 // const urlBase = "inilahkepri_mobile";
 // const urlWeb = "http://192.168.100.8/inilahkepri_mobile";
 //var urlAxios = "http://tukangketik.my.id/inilahkepri_web/api";
@@ -74478,13 +74486,15 @@ __webpack_require__.r(__webpack_exports__);
 //var iklan = "http://localhost/inilahkepri_web/public/iklan";
 //const album = "http://localhost/inilahkepri_web/public/iklan";
 //const gallery = "http://localhost/inilahkepri_web/public/iklan";
-var urlAxios = "http://inilahkepri.id/api";
-var urlBase = "";
-var urlWeb = "http://inilahkepri.id";
-var urlThumbnailBerita = "http://inilahkepri.id/resources/Artikel_Thumbnail";
-var iklan = "http://inilahkepri.id/public/iklan";
-var album = "http://inilahkepri.id/resources/album";
-var gallery = "http://inilahkepri.id/resources/gallery";
+//
+//const urlAxios = "http://inilahkepri.id/api";
+//const urlBase = "";
+//const urlWeb = "http://inilahkepri.id";
+//const urlThumbnailBerita = "http://inilahkepri.id/resources/Artikel_Thumbnail";
+//const iklan = "http://inilahkepri.id/public/iklan";
+//const album = "http://inilahkepri.id/resources/album";
+//const gallery = "http://inilahkepri.id/resources/gallery";
+
 /* harmony default export */ __webpack_exports__["default"] = ({
   urlAxios: urlAxios,
   urlBase: urlBase,
