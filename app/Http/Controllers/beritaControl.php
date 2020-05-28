@@ -75,6 +75,27 @@ class beritaControl extends Controller
         }
     }
     
+    function oldToNew(Request $r, $judul, $id){
+        
+        $berita = mdBerita::where('id_berita', $id)->get();
+
+        $urlLink = url()->full();
+        $folder = date("Ymd", strtotime($berita[0]->tgl_publish));
+        $description = Str::words($berita[0]->isi_berita, '30');
+        // $gambarLink = url('/storage/Artikel_Thumbnail/'.$folder.'/'.$berita[0]->gambar);
+        $gambarLink = 'http://inilahkepri.id/resources/Artikel_Thumbnail/'.$folder.'/'.$berita[0]->gambar;
+        
+         $seo = str_slug($berita[0]->judul,"-");    
+        $agent = new Agent();
+    
+        if($agent->isMobile()){
+            return Redirect::to('https://m.inilahkepri.id/berita/'.$id.'/'.$seo);
+        }
+        else{
+            return view('berita.detail', compact('id','berita','urlLink','description','gambarLink'));
+        }
+    }
+    
     function AddViewer(Request $r){
         $id = $r->get("id");
         

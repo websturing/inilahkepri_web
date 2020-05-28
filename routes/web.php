@@ -14,7 +14,7 @@
 
 
 Route::get("/berita/{id}/{judul}", "beritaControl@detail");
-Route::get("/m/berita/{id}/{judul}", "beritaControl@detail");
+Route::get("/m/berita/{id}/{judul}", "beritaControl@oldToNew");
 
 Route::get("/album/{id}/{judul}", "AlbumControl@detail");
 
