@@ -144,7 +144,7 @@
             },
             TodetailTre(i) {
                 let a = i + 4;
-                window.location.href = urlBase.urlWeb + this.Trending[i].LinkTo
+                window.location.href = urlBase.urlWeb + this.Trending[a].LinkTo
             },
         },
     }

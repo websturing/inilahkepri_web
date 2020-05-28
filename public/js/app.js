@@ -2539,7 +2539,7 @@ __webpack_require__.r(__webpack_exports__);
     },
     TodetailTre: function TodetailTre(i) {
       var a = i + 4;
-      window.location.href = _js_url__WEBPACK_IMPORTED_MODULE_0__["default"].urlWeb + this.Trending[i].LinkTo;
+      window.location.href = _js_url__WEBPACK_IMPORTED_MODULE_0__["default"].urlWeb + this.Trending[a].LinkTo;
     }
   }
 });
