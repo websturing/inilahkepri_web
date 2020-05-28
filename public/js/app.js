@@ -2156,6 +2156,9 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
 
 
 
@@ -2169,13 +2172,48 @@ __webpack_require__.r(__webpack_exports__);
       url: {
         gambar: _js_url__WEBPACK_IMPORTED_MODULE_0__["default"].urlThumbnailBerita,
         iklan: _js_url__WEBPACK_IMPORTED_MODULE_0__["default"].iklan
-      }
+      },
+      filterCategory: 'detail'
     };
   },
   mounted: function mounted() {
     console.log('Component mounted.');
     this.getBerita();
     this.getIklan();
+  },
+  computed: {
+    preiklanByRightContent: function preiklanByRightContent() {
+      var _this = this;
+
+      var iklan = this.iklan;
+
+      if (this.filterCategory && this.filterCategory !== 'all') {
+        iklan = iklan.filter(function (p) {
+          var foundCategory = p.iklan_position.findIndex(function (c) {
+            return c.show_on === _this.filterCategory && c.position === 'right_content';
+          });
+          return foundCategory !== -1;
+        });
+      }
+
+      return iklan;
+    },
+    preiklanByAboveTitle: function preiklanByAboveTitle() {
+      var _this2 = this;
+
+      var iklan = this.iklan;
+
+      if (this.filterCategory && this.filterCategory !== 'all') {
+        iklan = iklan.filter(function (p) {
+          var foundCategory = p.iklan_position.findIndex(function (c) {
+            return c.show_on === _this2.filterCategory && c.position === 'above_title';
+          });
+          return foundCategory !== -1;
+        });
+      }
+
+      return iklan;
+    }
   },
   props: ['id'],
   components: {
@@ -2196,23 +2234,23 @@ __webpack_require__.r(__webpack_exports__);
       return moment__WEBPACK_IMPORTED_MODULE_3___default()(arg);
     },
     getBerita: function getBerita() {
-      var _this = this;
+      var _this3 = this;
 
       axios.post(_js_url__WEBPACK_IMPORTED_MODULE_0__["default"].urlWeb + '/master/berita', {
         type: "BeritaById",
         id: this.id
       }).then(function (r) {
-        _this.berita = r.data[0];
+        _this3.berita = r.data[0];
       });
     },
     getIklan: function getIklan() {
-      var _this2 = this;
+      var _this4 = this;
 
       axios.post(_js_url__WEBPACK_IMPORTED_MODULE_0__["default"].urlWeb + '/master/iklan', {
-        type: "iklanByposition",
-        position: 'newsRigth'
+        type: "iklanByDevice",
+        web: 'true'
       }).then(function (r) {
-        _this2.iklan = r.data;
+        _this4.iklan = r.data;
       });
     }
   }
@@ -2423,7 +2461,8 @@ __webpack_require__.r(__webpack_exports__);
       url: {
         gambar: _js_url__WEBPACK_IMPORTED_MODULE_0__["default"].urlThumbnailBerita,
         iklan: _js_url__WEBPACK_IMPORTED_MODULE_0__["default"].iklan
-      }
+      },
+      filterCategory: 'main'
     };
   },
   mounted: function mounted() {
@@ -2431,6 +2470,24 @@ __webpack_require__.r(__webpack_exports__);
     this.getHeadline();
     this.getTrending();
     this.getIklan();
+  },
+  computed: {
+    preiklan: function preiklan() {
+      var _this = this;
+
+      var iklan = this.iklan;
+
+      if (this.filterCategory && this.filterCategory !== 'all') {
+        iklan = iklan.filter(function (p) {
+          var foundCategory = p.iklan_position.findIndex(function (c) {
+            return c.show_on === _this.filterCategory;
+          });
+          return foundCategory !== -1;
+        });
+      }
+
+      return iklan;
+    }
   },
   components: {
     Hooper: hooper__WEBPACK_IMPORTED_MODULE_1__["Hooper"],
@@ -2451,31 +2508,30 @@ __webpack_require__.r(__webpack_exports__);
       return moment__WEBPACK_IMPORTED_MODULE_3___default()(arg);
     },
     getHeadline: function getHeadline() {
-      var _this = this;
+      var _this2 = this;
 
       axios.post(_js_url__WEBPACK_IMPORTED_MODULE_0__["default"].urlWeb + '/master/berita', {
         type: "BeritaByHeadline"
       }).then(function (r) {
-        _this.headline = r.data;
+        _this2.headline = r.data;
       });
     },
     getTrending: function getTrending() {
-      var _this2 = this;
+      var _this3 = this;
 
       axios.post(_js_url__WEBPACK_IMPORTED_MODULE_0__["default"].urlWeb + '/master/berita', {
         type: "BeritaTrending"
       }).then(function (r) {
-        console.log("trending"), console.log(r.data), _this2.Trending = r.data;
+        console.log("trending"), console.log(r.data), _this3.Trending = r.data;
       });
     },
     getIklan: function getIklan() {
-      var _this3 = this;
+      var _this4 = this;
 
       axios.post(_js_url__WEBPACK_IMPORTED_MODULE_0__["default"].urlWeb + '/master/iklan', {
-        type: "iklanByposition",
-        position: 'newsRigth'
+        type: "iklanByDevice"
       }).then(function (r) {
-        _this3.iklan = r.data;
+        _this4.iklan = r.data;
       });
     },
     Todetail: function Todetail(i) {
@@ -57916,48 +57972,66 @@ var render = function() {
   return _c("div", [
     _c("section", {}, [
       _c("div", { staticClass: "ik-container" }, [
-        _c("div", { staticClass: "newsLeft" }, [
-          _c("div", { staticClass: "judulDetail" }, [
-            _vm._v(_vm._s(_vm.berita.judul))
-          ]),
-          _vm._v(" "),
-          _c("div", { staticClass: "is-kategori" }, [
-            _vm._v(
-              _vm._s(
-                _vm
-                  .moment(_vm.berita.tgl_publish)
-                  .startOf("day")
-                  .fromNow()
+        _c(
+          "div",
+          { staticClass: "newsLeft" },
+          [
+            _vm._l(_vm.preiklanByAboveTitle, function(i, Iindex) {
+              return _c("div", { key: Iindex }, [
+                _c("img", {
+                  staticStyle: {
+                    width: "100% !important",
+                    "border-radius": "0px",
+                    "margin-bottom": "10px"
+                  },
+                  attrs: { src: _vm.url.iklan + "/" + i.iklan_name }
+                })
+              ])
+            }),
+            _vm._v(" "),
+            _c("div", { staticClass: "judulDetail" }, [
+              _vm._v(_vm._s(_vm.berita.judul))
+            ]),
+            _vm._v(" "),
+            _c("div", { staticClass: "is-kategori" }, [
+              _vm._v(
+                _vm._s(
+                  _vm
+                    .moment(_vm.berita.tgl_publish)
+                    .startOf("day")
+                    .fromNow()
+                )
               )
-            )
-          ]),
-          _vm._v(" "),
-          _c("img", {
-            staticClass: "detailImage",
-            attrs: {
-              src:
-                _vm.url.gambar +
-                "/" +
-                _vm.berita.Folder +
-                "/" +
-                _vm.berita.gambar
-            }
-          }),
-          _vm._v(" "),
-          _c("div", { staticClass: "imagecaption" }, [
-            _vm._v(_vm._s(_vm.berita.ket_gambar))
-          ]),
-          _vm._v(" "),
-          _c("p", {
-            staticClass: "isi_berita",
-            domProps: { innerHTML: _vm._s(_vm.berita.isi_berita) }
-          })
-        ]),
+            ]),
+            _vm._v(" "),
+            _c("img", {
+              staticClass: "detailImage",
+              attrs: {
+                src:
+                  _vm.url.gambar +
+                  "/" +
+                  _vm.berita.Folder +
+                  "/" +
+                  _vm.berita.gambar
+              }
+            }),
+            _vm._v(" "),
+            _c("div", { staticClass: "imagecaption" }, [
+              _vm._v(_vm._s(_vm.berita.ket_gambar))
+            ]),
+            _vm._v(" "),
+            _c("p", {
+              staticClass: "isi_berita",
+              domProps: { innerHTML: _vm._s(_vm.berita.isi_berita) }
+            })
+          ],
+          2
+        ),
         _vm._v(" "),
         _c(
           "div",
           { staticClass: "newsRight" },
-          _vm._l(_vm.iklan, function(i, Iindex) {
+          _vm._l(_vm.preiklanByRightContent, function(i, Iindex) {
             return _c("div", { key: Iindex }, [
               _c("img", { attrs: { src: _vm.url.iklan + "/" + i.iklan_name } })
             ])
@@ -58008,7 +58082,12 @@ var render = function() {
               "Hooper",
               {
                 staticStyle: { height: "400px" },
-                attrs: { infiniteScroll: true, autoPlay: true, playSpeed: 4000 }
+                attrs: {
+                  infiniteScroll: true,
+                  autoPlay: true,
+                  playSpeed: 4000,
+                  wheelControl: false
+                }
               },
               _vm._l(_vm.headline, function(h, Hindex) {
                 return _c("Slide", { key: h.id_berita }, [
@@ -58334,7 +58413,7 @@ var render = function() {
                     "on-stick": "onStick"
                   }
                 },
-                _vm._l(_vm.iklan, function(i, Iindex) {
+                _vm._l(_vm.preiklan, function(i, Iindex) {
                   return _c("div", { key: Iindex }, [
                     _c("img", {
                       attrs: { src: _vm.url.iklan + "/" + i.iklan_name }
@@ -74382,13 +74461,14 @@ var router = new vue_router__WEBPACK_IMPORTED_MODULE_1__["default"]({
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-var urlAxios = "http://localhost/inilahkepri_web/api";
-var urlBase = "inilahkepri_web";
-var urlWeb = "http://localhost/inilahkepri_web";
-var urlThumbnailBerita = "http://inilahkepri.id/resources/Artikel_Thumbnail";
-var iklan = "http://localhost/inilahkepri_web/public/iklan";
-var album = "http://inilahkepri.id/resources/album";
-var gallery = "http://inilahkepri.id/resources/gallery"; // const urlAxios = "http://192.168.100.8/inilahkepri_mobile/api";
+//const urlAxios = "http://localhost/inilahkepri_web/api";
+//const urlBase = "inilahkepri_web";
+//const urlWeb = "http://localhost/inilahkepri_web";
+//const urlThumbnailBerita = "http://inilahkepri.id/resources/Artikel_Thumbnail";
+//const iklan = "http://localhost/inilahkepri_web/public/iklan";
+//const album = "http://inilahkepri.id/resources/album";
+//const gallery = "http://inilahkepri.id/resources/gallery";
+// const urlAxios = "http://192.168.100.8/inilahkepri_mobile/api";
 // const urlBase = "inilahkepri_mobile";
 // const urlWeb = "http://192.168.100.8/inilahkepri_mobile";
 //var urlAxios = "http://tukangketik.my.id/inilahkepri_web/api";
@@ -74398,7 +74478,13 @@ var gallery = "http://inilahkepri.id/resources/gallery"; // const urlAxios = "ht
 //var iklan = "http://localhost/inilahkepri_web/public/iklan";
 //const album = "http://localhost/inilahkepri_web/public/iklan";
 //const gallery = "http://localhost/inilahkepri_web/public/iklan";
-
+var urlAxios = "http://inilahkepri.id/inilahkepri_web/api";
+var urlBase = "";
+var urlWeb = "http://inilahkepri.id/inilahkepri_web";
+var urlThumbnailBerita = "http://inilahkepri.id/resources/Artikel_Thumbnail";
+var iklan = "http://inilahkepri.id/inilahkepri_web/public/iklan";
+var album = "http://inilahkepri.id/resources/album";
+var gallery = "http://inilahkepri.id/resources/gallery";
 /* harmony default export */ __webpack_exports__["default"] = ({
   urlAxios: urlAxios,
   urlBase: urlBase,

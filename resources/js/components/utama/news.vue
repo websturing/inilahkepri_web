@@ -37,7 +37,7 @@
                 </div>
                 <div class="newsRight" sticky-container :style="{'height' : righHeigh}">
                     <div v-sticky sticky-offset="{top: 10, bottom: 0}" sticky-side="both" on-stick="onStick">
-                        <div v-for="(i,Iindex) in iklan" :key="Iindex">
+                        <div v-for="(i,Iindex) in preiklan" :key="Iindex">
                             <img :src="url.iklan+'/'+i.iklan_name" class="">
                         </div>
                     </div>
@@ -70,7 +70,8 @@
                 url: {
                     gambar: urlBase.urlThumbnailBerita,
                     iklan: urlBase.iklan
-                }
+                },
+                filterCategory: 'main'
             }
         },
         mounted() {
@@ -78,6 +79,20 @@
             this.getHeadline()
             this.getTrending()
             this.getIklan()
+        },
+        computed: {
+            preiklan() {
+                let iklan = this.iklan
+                if (this.filterCategory && this.filterCategory !== 'all') {
+                    iklan = iklan.filter((p) => {
+                        let foundCategory = p.iklan_position.findIndex((c) => {
+                            return c.show_on === this.filterCategory
+                        })
+                        return foundCategory !== -1
+                    })
+                }
+                return iklan
+            }
         },
         components: {
             Hooper,
@@ -117,8 +132,7 @@
             },
             getIklan() {
                 axios.post(urlBase.urlWeb + '/master/iklan', {
-                        type: "iklanByposition",
-                        position: 'newsRigth'
+                        type: "iklanByDevice",
                     })
                     .then(r => {
                         this.iklan = r.data

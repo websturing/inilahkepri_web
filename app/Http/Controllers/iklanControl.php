@@ -9,16 +9,17 @@ class iklanControl extends Controller
 {
     function index(Request $r){
         $type = $r->get("type");
-        if($type == 'iklanByposition'){
-            return self::iklanByposition($r);
+        if($type == 'iklanByDevice'){
+            return self::iklanByDevice($r);
         }
     }
 
-    function iklanByposition(Request $r){
-        $positon = $r->get("position");
+    function iklanByDevice(Request $r){
+        $web = $r->get("web");
 
-        return mdIklan::where('position', $positon)
-                    ->orderBy('number','DESC')
+        return mdIklan::with(['iklanPosition' => function($i){
+                            $i->orderBy('order','ASC');
+                        }])
                     ->get();
     }
 }

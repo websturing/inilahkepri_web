@@ -2,7 +2,7 @@
     <div>
         <section class="headline-content ik-sideStrip" style="margin-top:-80px">
             <div class="ik-container">
-                <Hooper style="height: 400px" :infiniteScroll="true" :autoPlay="true" :playSpeed="4000">
+                <Hooper style="height: 400px" :infiniteScroll="true" :autoPlay="true" :playSpeed="4000" :wheelControl="false">
                     <Slide v-for="(h,Hindex) in headline" :key="h.id_berita">
                         <div class="headlineLeft">
                             <div class="padd-10">
