@@ -19,11 +19,11 @@
 //const gallery = "http://localhost/inilahkepri_web/public/iklan";
 
 
-const urlAxios = "http://inilahkepri.id/inilahkepri_web/api";
+const urlAxios = "http://inilahkepri.id/api";
 const urlBase = "";
-const urlWeb = "http://inilahkepri.id/inilahkepri_web";
+const urlWeb = "http://inilahkepri.id";
 const urlThumbnailBerita = "http://inilahkepri.id/resources/Artikel_Thumbnail";
-const iklan = "http://inilahkepri.id/inilahkepri_web/public/iklan";
+const iklan = "http://inilahkepri.id/public/iklan";
 const album = "http://inilahkepri.id/resources/album";
 const gallery = "http://inilahkepri.id/resources/gallery";
 

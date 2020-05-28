@@ -74478,11 +74478,11 @@ __webpack_require__.r(__webpack_exports__);
 //var iklan = "http://localhost/inilahkepri_web/public/iklan";
 //const album = "http://localhost/inilahkepri_web/public/iklan";
 //const gallery = "http://localhost/inilahkepri_web/public/iklan";
-var urlAxios = "http://inilahkepri.id/inilahkepri_web/api";
+var urlAxios = "http://inilahkepri.id/api";
 var urlBase = "";
-var urlWeb = "http://inilahkepri.id/inilahkepri_web";
+var urlWeb = "http://inilahkepri.id";
 var urlThumbnailBerita = "http://inilahkepri.id/resources/Artikel_Thumbnail";
-var iklan = "http://inilahkepri.id/inilahkepri_web/public/iklan";
+var iklan = "http://inilahkepri.id/public/iklan";
 var album = "http://inilahkepri.id/resources/album";
 var gallery = "http://inilahkepri.id/resources/gallery";
 /* harmony default export */ __webpack_exports__["default"] = ({
