@@ -15,6 +15,7 @@
     <link rel="stylesheet" href="{{url('public/pure/css/layouts/marketing-old-ie.css')}}">
     <link rel="stylesheet" href="{{url('public/pure/css/layouts/marketing.css')}}">
     <link rel="stylesheet" href="{{url('public/pure/css/layouts/style.css')}}">
+    <link href="{{url('public/css/icon.css')}}" rel="stylesheet" type="text/css">
 
 </head>
 

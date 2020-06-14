@@ -23,5 +23,7 @@ Route::get("/album/{id}/{judul}", "AlbumControl@detail");
 Route::post("/master/berita", "beritaControl@index");
 Route::post("/master/iklan", "iklanControl@index");
 Route::post("/master/album", "AlbumControl@index");
+Route::post("/master/kategori", "kategoriControl@index");
+Route::post("/master/subkategori", "subkategoriControl@index");
 
 Route::get("/{any}", "appControl@index")->where("any", ".*");

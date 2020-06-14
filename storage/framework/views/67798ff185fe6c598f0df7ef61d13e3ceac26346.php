@@ -15,6 +15,7 @@
     <link rel="stylesheet" href="<?php echo e(url('public/pure/css/layouts/marketing-old-ie.css')); ?>">
     <link rel="stylesheet" href="<?php echo e(url('public/pure/css/layouts/marketing.css')); ?>">
     <link rel="stylesheet" href="<?php echo e(url('public/pure/css/layouts/style.css')); ?>">
+    <link href="<?php echo e(url('public/css/icon.css')); ?>" rel="stylesheet" type="text/css">
 
 </head>
 
