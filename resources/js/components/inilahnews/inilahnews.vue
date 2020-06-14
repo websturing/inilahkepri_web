@@ -58,7 +58,7 @@
                 <span class="dot">...</span>
               </div>
             </el-image>
-            <a class="judul">{{b.judul}} ...</a>
+            <a class="judul" @click="TodetailTre(Bindex)">{{b.judul}} ...</a>
             <el-row :gutter="10">
               <el-col :md="12">
                 <div class="is-kategori" v-if="b.kategori != null">
@@ -141,6 +141,9 @@ export default {
     this.getKategori();
   },
   methods: {
+    TodetailTre(i) {
+      window.location.href = urlBase.urlWeb + this.berita.data[a].LinkTo;
+    },
     moment(arg) {
       moment.locale("id");
       return moment(arg);
