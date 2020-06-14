@@ -142,7 +142,7 @@ export default {
   },
   methods: {
     TodetailTre(i) {
-      window.location.href = urlBase.urlWeb + this.berita.data[a].LinkTo;
+      window.location.href = urlBase.urlWeb + this.berita.data[i].LinkTo;
     },
     moment(arg) {
       moment.locale("id");
