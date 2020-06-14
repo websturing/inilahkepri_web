@@ -1,6 +1,6 @@
-//const urlAxios = "http://localhost/inilahkepri_web/api";
-//const urlBase = "inilahkepri_web";
-//const urlWeb = "http://localhost/inilahkepri_web";
+// const urlAxios = "http://localhost/inilahkepri_web/api";
+// const urlBase = "inilahkepri_web";
+// const urlWeb = "http://localhost/inilahkepri_web";
 //const urlThumbnailBerita = "http://inilahkepri.id/resources/Artikel_Thumbnail";
 //const iklan = "http://localhost/inilahkepri_web/public/iklan";
 //const album = "http://inilahkepri.id/resources/album";

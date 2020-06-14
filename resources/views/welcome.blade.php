@@ -31,9 +31,9 @@
                 </div>
                 <div class="headlineRight">
                     <ul class="">
-                        <li class="pure-menu-item pure-menu-selected"><a href="#" class="pure-menu-link">Beranda</a></li>
+                        <li class="pure-menu-item pure-menu-selected"><a href="{{url('/')}}" class="pure-menu-link">Beranda</a></li>
                         <li class="pure-menu-item"><a href="#" class="pure-menu-link">Inilah Channel</a></li>
-                        <li class="pure-menu-item"><a href="#" class="pure-menu-link">Inilah News</a></li>
+                        <li class="pure-menu-item"><a href="{{url('/inilahnews')}}" class="pure-menu-link">Inilah News</a></li>
                         <li class="pure-menu-item"><a href="#" class="pure-menu-link">Inilah Parlemen</a></li>
                     </ul>
                 </div>

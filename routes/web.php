@@ -13,6 +13,8 @@
 
 
 
+Route::get("/inilahnews", "appControl@inilahnews");
+
 Route::get("/berita/{id}/{judul}", "beritaControl@detail");
 Route::get("/m/berita/{id}/{judul}", "beritaControl@oldToNew");
 

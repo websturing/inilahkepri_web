@@ -8,16 +8,18 @@ use Redirect;
 
 class appControl extends Controller
 {
-    function index(){
+    function index()
+    {
         $agent = new Agent();
-        
-        if($agent->isMobile()){
+
+        if ($agent->isMobile()) {
             return Redirect::to('https://m.inilahkepri.id');
-        }
-        else{
+        } else {
             return view('welcome');
         }
-        
-        
+    }
+    function inilahnews()
+    {
+        return view('berita.kategori');
     }
 }
