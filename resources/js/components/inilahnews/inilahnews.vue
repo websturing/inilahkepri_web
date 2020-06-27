@@ -58,7 +58,11 @@
                 <span class="dot">...</span>
               </div>
             </el-image>
-            <a class="judul" @click="TodetailTre(Bindex)">{{b.judul}} ...</a>
+            <a
+              class="judul"
+              style="text-decoration:none; color:#333;"
+              :href="url.web+'/'+b.LinkTo"
+            >{{b.judul}} ...</a>
             <el-row :gutter="10">
               <el-col :md="12">
                 <div class="is-kategori" v-if="b.kategori != null">
@@ -88,6 +92,7 @@ export default {
   data() {
     return {
       url: {
+        web: urlBase.urlWeb,
         ThumbnailBerita: urlBase.urlThumbnailBerita
       },
       berita: {
