@@ -91,7 +91,7 @@
 
     .AlbumHeadline .albumLeft {
         float: left;
-        width: 450px;
+        width: 1366px;
     }
 
     .AlbumHeadline #judul {
@@ -111,7 +111,7 @@
 
     .AlbumHeadline .albumRight {
         float: left;
-        width: 916px;
+        width: 1366px;
     }
 
     .gallery {
