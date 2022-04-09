@@ -26,7 +26,7 @@
     "dependencies": {
         "element-ui": "^2.13.2",
         "hooper": "^0.3.4",
-        "moment": "^2.24.0",
+        "moment": "^2.29.2",
         "vue-router": "^3.1.6",
         "vue-sticky-directive": "0.0.10",
         "vue-sticky-position": "^2.0.0"
